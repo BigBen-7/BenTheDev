@@ -39,7 +39,12 @@ const Contact = () => {
 
     setIsLoading(true);
     emailjs
-      .send("service_qqfn6ob", "template_out9qj2", formData, "dxNnAOq7bOLlGkZsT")
+      .send(
+        "service_qqfn6ob",
+        "template_out9qj2",
+        formData,
+        "dxNnAOq7bOLlGkZsT"
+      )
       .then((response) => {
         toast.success("Sent Successfully, will get back to you shortly");
         setFormData({
@@ -58,14 +63,16 @@ const Contact = () => {
 
   return (
     <div className="flex flex-col items-center justify-center bg-[#19191D] py-16 px-4 sm:px-6 lg:px-8">
-      <h2 className="text-5xl w-96 text-wrap font-bold text-[#FF8E5E] mb-8 text-center">
-        Let&apos;s build your  project together
+      <h2 className="text-3xl sm:text-2xl md:text-3xl lg:text-5xl font-bold text-[#FF8E5E] mb-8 text-center px-4 max-w-[90%] mx-auto">
+        Let&apos;s build your <span className="text-white">project </span>
+        together
       </h2>
+
       <div className="flex flex-col md:flex-row">
         <img
           src={contact}
           alt=""
-          className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg object-contain"
+          className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-sm object-contain"
         />
 
         <form
@@ -78,7 +85,7 @@ const Contact = () => {
                 Your Name <span className="text-[#FF8E5E]">*</span>
               </label>
               <input
-                type="text" 
+                type="text"
                 name="name"
                 placeholder="Enter name"
                 value={formData.name}
@@ -122,7 +129,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="mb-4">
-            <label className="block text-white mb-1">Message *</label>
+            <label className="block text-white mb-1">Message <span className="text-[#FF8E5E]">*</span></label>
             <textarea
               name="message"
               placeholder="Type here..."

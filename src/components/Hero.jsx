@@ -1,8 +1,8 @@
 import port from "../assets/port-removebg-preview.png";
-// import { FaAsterisk } from "react-icons/fa";
+import { FaAsterisk } from "react-icons/fa";
 
 function Hero() {
-  const skills = ["HTML5", "CSS", "JavaScript", "Front-End", "React","React"];
+  const skills = ["Web-Dev","HTML5", "CSS", "JavaScript",  "React", "TypeScript"];
 
   return (
     <>
@@ -33,15 +33,17 @@ function Hero() {
           />
         </div>
       </div>
-      {/* tilted skills */}
-      <div className="skills-bar-container ">
+      {/* Tilted Skills */}
+      <div className="skills-bar-container">
         <div className="skills-bar">
           {skills.map((skill, index) => (
-            <div key={index}>
-              <span className="skill">{skill}</span>
-              {/* {index < skills.length - 1 && (
-                <FaAsterisk className="icon" /> // Icon between each skill
-              )} */}
+            <div className="skill-item" key={index}>
+              <span className="skill"><em>{skill}</em></span>
+              {index < skills.length - 1 && (
+                <span className="icon">
+                  <FaAsterisk />
+                </span>
+              )}
             </div>
           ))}
         </div>

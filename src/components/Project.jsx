@@ -13,7 +13,6 @@ import {
   FaLongArrowAltLeft,
   FaLongArrowAltRight,
 } from "react-icons/fa";
-// import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import { FaChartSimple } from "react-icons/fa6";
 import { TbBrandRedux, TbBrandTailwind } from "react-icons/tb";
 import { SiReactrouter, SiFramer } from "react-icons/si";
@@ -68,9 +67,55 @@ const projects = [
       <FaHtml5 className="text-orange-400" />,
     ],
   },
-  
 ];
 
+// second list of projects
+const projectsSecondLayout = [
+  {
+    name: "BMI App",
+    image: bmi,
+    link: "https://bmi-premium.netlify.app/",
+    github: "https://github.com/BigBen-7/BMIApp",
+    technologies: [
+      <FaJs className="text-yellow-400" />,
+      <FaCss3 className="text-blue-400" />,
+      <FaHtml5 className="text-orange-400" />,
+    ],
+  },
+  {
+    name: "Referral App",
+    image: ref,
+    link: "https://referralapp.netlify.app/",
+    github: "https://github.com/BigBen-7/ReferralApp",
+    technologies: [
+      <FaReact className="text-blue-600" />,
+      <TbBrandTailwind className="text-blue-200" />,
+      <SiReactrouter className="text-orange-400" />,
+    ],
+  },
+  {
+    name: "Referral App",
+    image: ref,
+    link: "https://referralapp.netlify.app/",
+    github: "https://github.com/BigBen-7/ReferralApp",
+    technologies: [
+      <FaReact className="text-blue-600" />,
+      <TbBrandTailwind className="text-blue-200" />,
+      <SiReactrouter className="text-orange-400" />,
+    ],
+  },
+  {
+    name: "Referral App",
+    image: ref,
+    link: "https://referralapp.netlify.app/",
+    github: "https://github.com/BigBen-7/ReferralApp",
+    technologies: [
+      <FaReact className="text-blue-600" />,
+      <TbBrandTailwind className="text-blue-200" />,
+      <SiReactrouter className="text-orange-400" />,
+    ],
+  },
+];
 const ProjectCard = ({ project }) => (
   <motion.div className="relative group h-48 sm:h-64 md:h-72 rounded-lg overflow-hidden">
     <motion.div
@@ -122,14 +167,14 @@ const Project = () => {
 
   return (
     <section className="py-12 px-6 md:px-12">
-      <div className="text-center mb-8">
-        <h2 className="text-white font-extrabold text-3xl md:text-4xl">
+      <div className="text-center mb-8 px-4 sm:px-6 md:px-8">
+        <h2 className="text-white font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight">
           I create jobs
           <span className="block text-[#FF8E5E]">that enchant people</span>
         </h2>
-        <div className="w-[80%] flex justify-end">
+        <div className="w-full sm:w-[80%] mx-auto flex justify-center sm:justify-end mt-4">
           {/* Button with Inner Border */}
-          <div className="h-9 w-9 border-[#FF8E5E] border rounded-full p-2 flex items-center justify-center bg-transparent">
+          <div className="h-10 w-10 sm:h-9 sm:w-9 border-[#FF8E5E] border rounded-full p-2 flex items-center justify-center bg-transparent">
             <motion.span
               onClick={handleToggleProjects}
               className="text-white cursor-pointer"
@@ -151,16 +196,17 @@ const Project = () => {
           </div>
         </div>
       </div>
+
       {!showAltProjects ? (
         <motion.div
           key="projects-one"
-          initial={{ x: "30%", opacity: 0 }}
+          initial={{ x: "-30%", opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          exit={{ x: "-30%", opacity: 0 }}
+          exit={{ x: "30%", opacity: 0 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-screen-xl mx-auto overflow-hidden"
+          className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-4 gap-4 max-w-screen-xl mx-auto overflow-hidden"
         >
-          <div className="flex flex-col gap-4">
+          <div className="flex lg:flex-col gap-4 ">
             {projects
               .filter((_, index) => index % 2 === 0)
               .map((project, index) => (
@@ -193,7 +239,7 @@ const Project = () => {
             </div>
           </motion.div>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col lg:flex-col md:flex-row gap-4">
             {projects
               .filter((_, index) => index % 2 !== 0)
               .map((project, index) => (
@@ -204,18 +250,17 @@ const Project = () => {
       ) : (
         <motion.div
           key="projects-two"
-          initial={{ x: "-50%", opacity: 0 }}
+          initial={{ x: "30%", opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          exit={{ x: "50%", opacity: 0 }}
+          exit={{ x: "-30%", opacity: 0 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 max-w-screen-xl mx-auto overflow-hidden"
         >
-          {projects.map((project, index) => (
+          {projectsSecondLayout.map((project, index) => (
             <ProjectCard key={index} project={project} />
           ))}
         </motion.div>
       )}
-      
     </section>
   );
 };
