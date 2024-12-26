@@ -1,8 +1,15 @@
 import port from "../assets/port-removebg-preview.png";
-import { FaAsterisk } from "react-icons/fa";
+import { FaAsterisk, FaFilePdf } from "react-icons/fa";
 
 function Hero() {
-  const skills = ["Web-Dev","HTML5", "CSS", "JavaScript",  "React", "TypeScript"];
+  const skills = [
+    "Web-Dev",
+    "HTML5",
+    "CSS",
+    "JavaScript",
+    "React",
+    "TypeScript",
+  ];
 
   return (
     <>
@@ -23,6 +30,18 @@ function Hero() {
               interactions that delight people.
             </em>
           </p>
+
+          <a
+            href="https://drive.google.com/file/d/1qHdP3wuwqyind_zx1ARI7vjM749-GlL6/view?usp=drive_link"
+            // target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View the PDF document in a new tab"
+          >
+            <span className="ml-2 py-2 text-white gap-1 inline-flex">
+              <FaFilePdf className="text-[#FF8E5E] text-xl" />
+              <em>Resume</em>
+            </span>
+          </a>
         </div>
 
         <div className="">
@@ -38,7 +57,9 @@ function Hero() {
         <div className="skills-bar">
           {skills.map((skill, index) => (
             <div className="skill-item" key={index}>
-              <span className="skill"><em>{skill}</em></span>
+              <span className="skill">
+                <em>{skill}</em>
+              </span>
               {index < skills.length - 1 && (
                 <span className="icon">
                   <FaAsterisk />
