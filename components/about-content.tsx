@@ -29,7 +29,7 @@ export function AboutContent() {
         <CardHeader>
           <div className="mx-auto h-32 w-32 overflow-hidden rounded-full bg-primary/10 flex items-center justify-center">
             <Image
-              src="/IMG-20240623-WA0012-removebg-preview.png"
+              src="/Benard.png"
               alt="Ben"
               width={200}
               height={200}
