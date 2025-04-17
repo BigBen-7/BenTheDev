@@ -52,7 +52,7 @@ export function SlidePanel({ isOpen, onClose, children, title, side = "right" }:
       {/* Panel */}
       <div
         className={cn(
-          "fixed inset-y-0 z-50 w-full max-w-md bg-background shadow-lg transition-transform duration-300 ease-in-out",
+          "fixed inset-y-0 z-50 w-full max-w-lg bg-background shadow-lg transition-transform duration-300 ease-in-out",
           side === "right" ? "right-0" : "left-0",
           isOpen ? "translate-x-0" : side === "right" ? "translate-x-full" : "-translate-x-full",
         )}

@@ -1,190 +1,258 @@
-"use client"
+"use client";
 
-import type React from "react"
+import {
+  Github,
+  Linkedin,
+  Mail,
+  FileText,
+  MessageSquare,
+  Clock,
+  MapPin,
+  ExternalLink,
+  LinkIcon,
+  Download,
+} from "lucide-react";
+import Link from "next/link";
 
-import { useState } from "react"
-import { Github, Linkedin, Mail, Send, Loader2 } from "lucide-react"
-
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { useToast } from "@/hooks/use-toast"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 
 export function ContactContent() {
-  const { toast } = useToast()
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  })
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false)
-      toast({
-        title: "Message sent!",
-        description: "Thanks for reaching out. I'll get back to you soon.",
-      })
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      })
-    }, 1500)
-  }
-
   return (
     <div className="space-y-8">
+      <div className="space-y-4">
+        <h2 className="text-2xl font-bold">Get In Touch</h2>
+        <p className="text-muted-foreground">
+          I'm always open to discussing new projects, creative ideas, or
+          opportunities to be part of your vision. Feel free to reach out
+          through any of the channels below.
+        </p>
+      </div>
+
+      <div className="grid gap-6 md:grid-cols-2">
+        <Card className="overflow-hidden border-none shadow-md bg-gradient-to-br from-primary/5 to-primary/10">
+          <CardHeader className="pb-2">
+            <div className="flex items-center gap-3">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20">
+                <Mail className="h-5 w-5 text-primary" />
+              </div>
+              <div>
+                <CardTitle>Email</CardTitle>
+              </div>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <p className="text-xs text-muted-foreground mt-1">
+              For project inquiries and collaborations
+            </p>
+          </CardContent>
+          <CardFooter className="mt-4">
+            <Button variant="outline" asChild className="w-full">
+              <a href="mailto:benardsimon7@gmail.com">
+                <MessageSquare className="mr-2 h-4 w-4" />
+                Send Email
+              </a>
+            </Button>
+          </CardFooter>
+        </Card>
+
+        <Card className="overflow-hidden border-none shadow-md bg-gradient-to-br from-primary/5 to-primary/10">
+          <CardHeader className="pb-2">
+            <div className="flex items-center gap-3">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20">
+                <Github className="h-5 w-5 text-primary" />
+              </div>
+              <div>
+                <CardTitle>GitHub</CardTitle>
+              </div>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <p className="text-xs text-muted-foreground mt-1">
+              See my open source contributions and personal projects
+            </p>
+          </CardContent>
+          <CardFooter>
+            <Button variant="outline" asChild className="w-full">
+              <a
+                href="https://github.com/BigBen-7"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ExternalLink className="mr-2 h-4 w-4" />
+                View Profile
+              </a>
+            </Button>
+          </CardFooter>
+        </Card>
+
+        <Card className="overflow-hidden border-none shadow-md bg-gradient-to-br from-primary/5 to-primary/10">
+          <CardHeader className="pb-2">
+            <div className="flex items-center gap-3">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20">
+                <Linkedin className="h-5 w-5 text-primary" />
+              </div>
+              <div>
+                <CardTitle>LinkedIn</CardTitle>
+              </div>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <p className="font-medium"></p>
+            <p className="text-sm text-muted-foreground mt-1">
+              Let's connect and discuss opportunities
+            </p>
+          </CardContent>
+          <CardFooter>
+            <Button variant="outline" asChild className="w-full">
+              <a
+                href="https://www.linkedin.com/in/benard-simon-181413244"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ExternalLink className="mr-2 h-4 w-4" />
+                Connect
+              </a>
+            </Button>
+          </CardFooter>
+        </Card>
+
+        <Card className="overflow-hidden border-none shadow-md bg-gradient-to-br from-primary/5 to-primary/10">
+          <CardHeader className="pb-2">
+            <div className="flex items-center gap-3">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20">
+                <FileText className="h-5 w-5 text-primary" />
+              </div>
+              <div>
+                <CardTitle>Resume</CardTitle>
+              </div>
+            </div>
+          </CardHeader>
+          <CardContent>
+              <p className="text-xs text-muted-foreground mt-1">
+                Get a comprehensive overview of my skills and experience
+              </p>
+          </CardContent>
+          <CardFooter className="flex flex-col gap-2">
+            <Button variant="outline" asChild className="w-full">
+              <Link
+                href="https://drive.google.com/file/d/1SkiND40IFebFTnB7j8bDYwotqMrf26tX/view?usp=drive_link"
+                download
+              >
+                <ExternalLink className="mr-2 h-4 w-4" />
+                View Resume
+              </Link>
+            </Button>
+            <Button variant="outline" asChild className="w-full">
+                <a href="/Benard's-resume.pdf" download>
+                  <Download  />
+                  Download Resume
+                </a>
+            </Button>
+          </CardFooter>
+        </Card>
+      </div>
+
+      <Separator />
+
       <Card>
         <CardHeader>
-          <CardTitle>Send a Message</CardTitle>
-          <CardDescription>Fill out the form below and I'll get back to you as soon as possible.</CardDescription>
+          <CardTitle>Availability & Working Hours</CardTitle>
         </CardHeader>
-        <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="grid gap-2">
-              <Label htmlFor="name">Name</Label>
-              <Input
-                id="name"
-                name="name"
-                placeholder="Your name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="focus-visible:ring-primary"
-              />
+        <CardContent className="space-y-4">
+          <div className="flex items-start gap-3">
+            <Clock className="h-5 w-5 text-primary mt-0.5" />
+            <div>
+              <h3 className="font-medium">Working Hours</h3>
+              <p className="text-sm text-muted-foreground">
+                Monday - Friday: 9:00 AM - 6:00 PM (WAT)
+              </p>
+              <p className="text-sm text-muted-foreground">
+                I'm flexible and can accommodate different time zones for
+                meetings and collaborations.
+              </p>
             </div>
-            <div className="grid gap-2">
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="Your email address"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="focus-visible:ring-primary"
-              />
+          </div>
+
+          <div className="flex items-start gap-3">
+            <MapPin className="h-5 w-5 text-primary mt-0.5" />
+            <div>
+              <h3 className="font-medium">Location</h3>
+              <p className="text-sm text-muted-foreground">
+                Based in Kaduna, Nigeria
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Available for remote work worldwide and open to relocation for
+                the right opportunity.
+              </p>
             </div>
-            <div className="grid gap-2">
-              <Label htmlFor="subject">Subject</Label>
-              <Input
-                id="subject"
-                name="subject"
-                placeholder="What's this about?"
-                value={formData.subject}
-                onChange={handleChange}
-                required
-                className="focus-visible:ring-primary"
-              />
-            </div>
-            <div className="grid gap-2">
-              <Label htmlFor="message">Message</Label>
-              <Textarea
-                id="message"
-                name="message"
-                placeholder="Your message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                className="min-h-[150px] focus-visible:ring-primary"
-              />
-            </div>
-            <Button
-              type="submit"
-              className="w-full transition-all hover:bg-primary/90 hover:scale-[1.02]"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? (
-                <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Sending...
-                </>
-              ) : (
-                <>
-                  <Send className="mr-2 h-4 w-4" />
-                  Send Message
-                </>
-              )}
-            </Button>
-          </form>
+          </div>
         </CardContent>
       </Card>
 
       <Card>
         <CardHeader>
-          <CardTitle>Contact Information</CardTitle>
-          <CardDescription>Here are the ways you can reach me directly.</CardDescription>
+          <CardTitle>How I Can Help</CardTitle>
         </CardHeader>
-        <CardContent className="space-y-6">
-          <div className="group flex items-center gap-4 p-3 transition-colors hover:bg-muted/50 rounded-lg">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-              <Mail className="h-5 w-5 text-primary" />
-            </div>
-            <div>
-              <h3 className="font-medium">Email</h3>
-              <p className="text-sm text-muted-foreground">
-                <a href="mailto:benardsimon7@gmail.com" className="hover:text-primary transition-colors">
-                  benardsimon7@gmail.com
-                </a>
-              </p>
-            </div>
-          </div>
-
-          <div className="group flex items-center gap-4 p-3 transition-colors hover:bg-muted/50 rounded-lg">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-              <Github className="h-5 w-5 text-primary" />
-            </div>
-            <div>
-              <h3 className="font-medium">GitHub</h3>
-              <p className="text-sm text-muted-foreground">
-                <a
-                  href="https://github.com/BigBen-7"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-primary transition-colors"
-                >
-                  github.com/BigBen-7
-                </a>
-              </p>
-            </div>
-          </div>
-
-          <div className="group flex items-center gap-4 p-3 transition-colors hover:bg-muted/50 rounded-lg">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-              <Linkedin className="h-5 w-5 text-primary" />
-            </div>
-            <div>
-              <h3 className="font-medium">LinkedIn</h3>
-              <p className="text-sm text-muted-foreground">
-                <a
-                  href="https://www.linkedin.com/in/benard-simon-181413244"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-primary transition-colors"
-                >
-                  linkedin.com/in/benard-simon-181413244
-                </a>
-              </p>
-            </div>
-          </div>
+        <CardContent>
+          <ul className="space-y-3">
+            <li className="flex items-start gap-2">
+              <div className="rounded-full bg-primary/20 p-1 mt-0.5">
+                <span className="text-xs text-primary font-bold">✓</span>
+              </div>
+              <div>
+                <p className="font-medium">Frontend Development</p>
+                <p className="text-sm text-muted-foreground">
+                  Building responsive, accessible, and performant web
+                  applications
+                </p>
+              </div>
+            </li>
+            <li className="flex items-start gap-2">
+              <div className="rounded-full bg-primary/20 p-1 mt-0.5">
+                <span className="text-xs text-primary font-bold">✓</span>
+              </div>
+              <div>
+                <p className="font-medium">React & Next.js Development</p>
+                <p className="text-sm text-muted-foreground">
+                  Creating modern web applications with React and Next.js
+                </p>
+              </div>
+            </li>
+            <li className="flex items-start gap-2">
+              <div className="rounded-full bg-primary/20 p-1 mt-0.5">
+                <span className="text-xs text-primary font-bold">✓</span>
+              </div>
+              <div>
+                <p className="font-medium">Open Source Contributions</p>
+                <p className="text-sm text-muted-foreground">
+                  Collaborating on open source projects and contributing to the
+                  community
+                </p>
+              </div>
+            </li>
+            <li className="flex items-start gap-2">
+              <div className="rounded-full bg-primary/20 p-1 mt-0.5">
+                <span className="text-xs text-primary font-bold">✓</span>
+              </div>
+              <div>
+                <p className="font-medium">UI/UX Implementation</p>
+                <p className="text-sm text-muted-foreground">
+                  Turning designs into functional, beautiful interfaces
+                </p>
+              </div>
+            </li>
+          </ul>
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }
