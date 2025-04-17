@@ -1,5 +1,12 @@
-import { Calendar, Download, Github,FileCode, Linkedin, Mail } from "lucide-react";
-import { TbBrandNextjs, TbBrandTypescript } from "react-icons/tb";
+import {
+  Calendar,
+  Download,
+  Github,
+  FileCode,
+  Linkedin,
+  Mail,
+} from "lucide-react";
+import { TbBrandNextjs, TbBrandTypescript, TbBrandReactNative } from "react-icons/tb";
 import Link from "next/link";
 import { FaGithub, FaReact } from "react-icons/fa";
 import { FaGitAlt } from "react-icons/fa6";
@@ -14,8 +21,6 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
-
-
 
 export function AboutContent() {
   return (
@@ -101,6 +106,7 @@ export function AboutContent() {
         </CardContent>
       </Card>
 
+      {/* Technologies */}
       <Card>
         <CardHeader>
           <CardTitle>Technologies</CardTitle>
@@ -112,36 +118,61 @@ export function AboutContent() {
               <Badge>
                 <FileCode className="w-3 h-3" /> JavaScript
               </Badge>
-              <Badge> <TbBrandTypescript/>  TypeScript</Badge>
+              <Badge>
+                <TbBrandTypescript /> TypeScript
+              </Badge>
             </div>
           </div>
 
           <div>
             <h3 className="text-sm font-medium mb-2">Frameworks</h3>
             <div className="flex flex-wrap gap-2">
-              <Badge><FaReact />React</Badge>
-              <Badge><TbBrandNextjs />Next.js</Badge>
-              <Badge><SiNestjs/>NestJS</Badge>
+              <Badge>
+                <FaReact />
+                React
+              </Badge>
+              <Badge>
+                <TbBrandNextjs />
+                Next.js
+              </Badge>
+              <Badge>
+                <SiNestjs />
+                NestJs
+              </Badge>
+              <Badge>
+              <TbBrandReactNative />
+                React Native
+              </Badge>
             </div>
           </div>
 
           <div>
             <h3 className="text-sm font-medium mb-2">Databases</h3>
             <div className="flex flex-wrap gap-2">
-              <Badge><SiPostgresql />PostgreSQL</Badge>
+              <Badge>
+                <SiPostgresql />
+                PostgreSQL
+              </Badge>
             </div>
           </div>
 
           <div>
             <h3 className="text-sm font-medium mb-2">Version Control</h3>
             <div className="flex flex-wrap gap-2">
-              <Badge><FaGitAlt />Git</Badge>
-              <Badge><FaGithub />GitHub</Badge>
+              <Badge>
+                <FaGitAlt />
+                Git
+              </Badge>
+              <Badge>
+                <FaGithub />
+                GitHub
+              </Badge>
             </div>
           </div>
         </CardContent>
       </Card>
 
+      {/* Experience */}
       <Card>
         <CardHeader>
           <CardTitle>Experience</CardTitle>
@@ -187,6 +218,28 @@ export function AboutContent() {
                 dynamic applications including Feedback App and GitHub Finder.
                 Led a team of 7 on projects including Shepherd and a referral
                 app management system.
+              </p>
+            </div>
+          </div>
+
+          <div className="relative pl-6 border-l">
+            <div className="absolute left-0 top-1 h-2 w-2 -translate-x-1/2 rounded-full bg-primary"></div>
+            <div className="space-y-1">
+              <div className="flex items-center justify-between">
+                <h3 className="font-semibold">Volunteer Frontend Mentor</h3>
+                <div className="flex items-center text-sm text-muted-foreground">
+                  <Calendar className="mr-1 h-3 w-3" />
+                  <span>03/2023 - 11/2023</span>
+                </div>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Code for Africa | Remote
+              </p>
+              <p className="text-sm">
+                Mentored aspiring developers in frontend technologies through
+                weekly virtual sessions. Guided 5+ students through building
+                their first React applications. Created learning resources and
+                code reviews to help participants improve their skills.
               </p>
             </div>
           </div>
