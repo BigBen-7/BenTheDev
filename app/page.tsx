@@ -398,7 +398,7 @@ export default function Home() {
                   className="transition-all hover:scale-[1.03] hover:shadow-md hover:shadow-primary/30 text-sm sm:text-base"
                 >
                   <Link
-                    href="https://github.com/BigBen-7?tab=repositories"
+                    href="https://jealousgx.github.io/oss-tracker/?username=BigBen-7"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center"
