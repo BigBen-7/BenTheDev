@@ -97,7 +97,7 @@ export default function Home() {
                   Hello, My name is,
                 </p>
                 <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                  Benard
+                  Benard Simon<span className="text-primary">.</span>
                 </h1>
                 <p className="text-xl font-semibold text-primary">
                   Frontend Engineer | OpenSource Contributor
@@ -204,7 +204,8 @@ export default function Home() {
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2">
-            <Card className="overflow-hidden border rounded-lg">
+            <Card className="relative overflow-hidden border rounded-lg border-primary/10 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+              {" "}
               <CardHeader className="p-4 pb-2">
                 <CardTitle className="text-xl">that'swhatshesaid</CardTitle>
                 <CardDescription>
@@ -225,50 +226,23 @@ export default function Home() {
                   </Badge>
                 </div>
               </CardContent>
-              <CardFooter className="flex gap-2 p-4 pt-0">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  asChild
-                  className="rounded-md"
-                >
-                  <Link
-                    href="https://github.com/username/thats-what-she-said-bot"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center"
-                  >
-                    <Github className="mr-2 h-4 w-4" />
-                    Code
-                  </Link>
-                </Button>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  asChild
-                  className="rounded-md"
-                >
-                  <Link
-                    href="https://discord.com/api/oauth2/authorize?client_id=123456789&permissions=0&scope=bot"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center"
-                  >
-                    Demo
-                  </Link>
-                </Button>
-              </CardFooter>
             </Card>
 
-            <Card className="overflow-hidden border rounded-lg">
-              <CardHeader className="p-4 pb-2">
-                <CardTitle className="text-xl">find-tunes</CardTitle>
-                <CardDescription>
-                  An album finder that lets you find albums from your favorite
-                  artists using Spotify's API
+            <Card className="relative overflow-hidden border rounded-lg border-primary/10 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+              {/* Soft glow background */}
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-400/10 to-teal-400/10 opacity-0 blur-2xl transition-opacity duration-500 hover:opacity-100" />
+
+              <CardHeader className="relative p-4 pb-2 z-10">
+                <CardTitle className="text-xl font-semibold">
+                  fineTunes
+                </CardTitle>
+                <CardDescription className="text-sm sm:text-base leading-relaxed">
+                  A personalized music discovery dashboard with AI-powered
+                  playlist generation.
                 </CardDescription>
               </CardHeader>
-              <CardContent className="p-4 pt-2">
+
+              <CardContent className="relative p-4 pt-2 z-10">
                 <div className="flex flex-wrap gap-2 mb-4">
                   <Badge variant="secondary" className="rounded-md">
                     React
@@ -279,41 +253,11 @@ export default function Home() {
                   <Badge variant="secondary" className="rounded-md">
                     Spotify API
                   </Badge>
+                  <Badge variant="secondary" className="rounded-md">
+                    Gemini API
+                  </Badge>
                 </div>
               </CardContent>
-              <CardFooter className="flex gap-2 p-4 pt-0">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  asChild
-                  className="rounded-md"
-                >
-                  <Link
-                    href="https://github.com/username/find-tunes"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center"
-                  >
-                    <Github className="mr-2 h-4 w-4" />
-                    Code
-                  </Link>
-                </Button>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  asChild
-                  className="rounded-md"
-                >
-                  <Link
-                    href="https://find-tunes.vercel.app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center"
-                  >
-                    Demo
-                  </Link>
-                </Button>
-              </CardFooter>
             </Card>
           </div>
 
@@ -328,34 +272,72 @@ export default function Home() {
 
         {/* Open Source */}
         <section className="space-y-6 py-8 md:py-12">
-          <div className="space-y-1">
-            <h2 className="text-2xl font-bold tracking-tight md:text-3xl">Open Source</h2>
-            <p className="text-muted-foreground">My contributions to the open-source community.</p>
+          <div className="space-y-2 text-center md:text-left">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight bg-gradient-to-r from-purple-500 via-blue-400 to-teal-400 bg-clip-text text-transparent animate-gradient">
+              Open Source
+            </h2>
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto md:mx-0">
+              My contributions to the open-source community — shaping tools,
+              improving systems, and building for impact.
+            </p>
           </div>
+
           <div className="grid gap-6">
-            <Card>
+            <Card className="border border-primary/10 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
               <CardHeader>
-                <CardTitle>Active Contributor</CardTitle>
-                <CardDescription>
-                  Projects in the blockchain space, Starknet, Stellar and WorldCoin Ecosystems with codebase written in
-                  JavaScript, TypeScript, React and Next.js
+                <CardTitle className="flex items-center gap-2 text-base sm:text-lg md:text-xl">
+                  <span className="relative inline-flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                  </span>
+                  Active Contributor
+                </CardTitle>
+                <CardDescription className="text-sm sm:text-base md:text-lg leading-relaxed">
+                  Projects in the blockchain space — Starknet, Stellar, and
+                  WorldCoin ecosystems — built with JavaScript, TypeScript,
+                  React, and Next.js.
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <p className="mb-4">
-                  I actively contribute to various open-source projects, focusing on frontend development and UI
-                  improvements. Check out my contribution history and the projects I'm involved with on OnlyDust.
+
+              <CardContent className="space-y-4 text-sm sm:text-base md:text-lg leading-relaxed">
+                <p>
+                  I actively contribute to open-source projects, focusing on
+                  frontend architecture, UI performance, and developer
+                  experience. These collaborations have helped enhance ecosystem
+                  tools and drive user-centered innovation.
                 </p>
+
+                <ul className="list-disc list-inside text-muted-foreground space-y-1">
+                  <li>
+                    <strong>Veritix:</strong> Event ticketing platform (NestJS +
+                    PostgreSQL).
+                  </li>
+                  <li>
+                    <strong>Vestroll:</strong> Team Management.
+                  </li>
+                  <li>
+                    <strong>Dewordle:</strong> Multi-game word platform with
+                    leaderboards.
+                  </li>
+                  <li>
+                    <strong>LyricsFlip:</strong> Music lyric remix API backend.
+                  </li>
+                </ul>
               </CardContent>
+
               <CardFooter>
-                <Button asChild className="transition-all hover:scale-[1.02]">
+                <Button
+                  asChild
+                  className="transition-all hover:scale-[1.03] hover:shadow-md hover:shadow-primary/30 text-sm sm:text-base"
+                >
                   <Link
-                    href="https://app.onlydust.com/users/BigBen-7/projects"
+                    href="https://jealousgx.github.io/oss-tracker/?username=BigBen-7"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center"
                   >
-                    View My Contributions <ArrowRight className="ml-2 h-4 w-4" />
+                    View My Contributions{" "}
+                    <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
               </CardFooter>
@@ -373,11 +355,18 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-col gap-4 sm:flex-row">
-            <Card className="flex-1">
-              <CardHeader>
-                <CardTitle>Contact Information</CardTitle>
+            {/* Contact Information Card */}
+            <Card className="relative flex-1 border border-primary/10 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+              {/* Soft Glow Background */}
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-400/10 to-teal-400/10 opacity-0 blur-2xl transition-opacity duration-500 hover:opacity-100" />
+
+              <CardHeader className="relative z-10">
+                <CardTitle className="text-lg sm:text-xl font-semibold">
+                  Contact Information
+                </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+
+              <CardContent className="relative space-y-4 z-10">
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-muted-foreground" />
                   <p>benardsimon7@gmail.com</p>
@@ -386,7 +375,7 @@ export default function Home() {
                   <Github className="h-5 w-5 text-muted-foreground" />
                   <Link
                     href="https://github.com/BigBen-7"
-                    className="hover:underline"
+                    className="hover:underline transition-all hover:text-primary"
                   >
                     github.com/BigBen-7
                   </Link>
@@ -395,31 +384,40 @@ export default function Home() {
                   <Linkedin className="h-5 w-5 text-muted-foreground" />
                   <Link
                     href="https://www.linkedin.com/in/benard-simon-181413244"
-                    className="hover:underline"
+                    className="hover:underline transition-all hover:text-primary"
                   >
                     linkedin.com/in/benard-simon-181413244
                   </Link>
                 </div>
               </CardContent>
-              <CardFooter>
+
+              <CardFooter className="relative z-10">
                 <Button
                   onClick={() => setIsContactOpen(true)}
-                  className="w-full transition-all hover:scale-[1.02]"
+                  className="w-full transition-all hover:scale-[1.03] hover:shadow-primary/30"
                 >
                   Send a Message
                 </Button>
               </CardFooter>
             </Card>
-            <Card className="flex-1">
-              <CardHeader>
-                <CardTitle>Quick Links</CardTitle>
+
+            {/* Quick Links Card */}
+            <Card className="relative flex-1 border border-primary/10 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+              {/* Soft Glow Background */}
+              <div className="absolute inset-0 bg-gradient-to-r from-teal-400/10 via-blue-400/10 to-purple-500/10 opacity-0 blur-2xl transition-opacity duration-500 hover:opacity-100" />
+
+              <CardHeader className="relative z-10">
+                <CardTitle className="text-lg sm:text-xl font-semibold">
+                  Quick Links
+                </CardTitle>
               </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
+
+              <CardContent className="relative z-10">
+                <ul className="space-y-2 text-sm sm:text-base">
                   <li>
                     <Link
                       href="https://drive.google.com/file/d/1SkiND40IFebFTnB7j8bDYwotqMrf26tX/view?usp=drive_link"
-                      className="flex items-center gap-2 hover:underline"
+                      className="flex items-center gap-2 hover:underline transition-all hover:text-primary"
                     >
                       <ArrowRight className="h-4 w-4" /> View Resume
                     </Link>
@@ -427,7 +425,7 @@ export default function Home() {
                   <li>
                     <Link
                       href="/projects"
-                      className="flex items-center gap-2 hover:underline"
+                      className="flex items-center gap-2 hover:underline transition-all hover:text-primary"
                     >
                       <ArrowRight className="h-4 w-4" /> Browse Projects
                     </Link>
@@ -437,7 +435,7 @@ export default function Home() {
                       href="https://app.onlydust.com/users/BigBen-7/projects"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 hover:underline"
+                      className="flex items-center gap-2 hover:underline transition-all hover:text-primary"
                     >
                       <ArrowRight className="h-4 w-4" /> Open Source Work
                     </Link>
@@ -445,7 +443,7 @@ export default function Home() {
                   <li>
                     <button
                       onClick={() => setIsContactOpen(true)}
-                      className="flex items-center gap-2 hover:underline text-left w-full"
+                      className="flex items-center gap-2 hover:underline text-left w-full transition-all hover:text-primary"
                     >
                       <ArrowRight className="h-4 w-4" /> Contact Form
                     </button>
@@ -465,13 +463,21 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-4">
             <Button variant="ghost" size="icon" asChild>
-              <Link href="https://github.com/BigBen-7" target="_blank" rel="noopener noreferrer">
+              <Link
+                href="https://github.com/BigBen-7"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Github className="h-4 w-4" />
                 <span className="sr-only">GitHub</span>
               </Link>
             </Button>
             <Button variant="ghost" size="icon" asChild>
-              <Link href="https://www.linkedin.com/in/benard-simon-181413244" target="_blank" rel="noopener noreferrer">
+              <Link
+                href="https://www.linkedin.com/in/benard-simon-181413244"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Linkedin className="h-4 w-4" />
                 <span className="sr-only">LinkedIn</span>
               </Link>

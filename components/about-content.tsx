@@ -92,7 +92,7 @@ export function AboutContent() {
             <em>
               A creative professional with a strong portfolio in digital design,
               including experience with front-end dev. Experienced working from
-              concept to production, and with stakeholders from multiple
+              concepts to production, and with stakeholders from multiple
               disciplines.
             </em>
           </p>
