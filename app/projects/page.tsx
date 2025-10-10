@@ -159,7 +159,7 @@ export default function ProjectsPage() {
                     </Button>
                     <Button size="sm" asChild>
                       <Link
-                        href="https://find-tunes.vercel.app"
+                        href="https://fine-tunes.vercel.app"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
