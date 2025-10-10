@@ -226,39 +226,6 @@ export default function Home() {
                   </Badge>
                 </div>
               </CardContent>
-              <CardFooter className="flex gap-2 p-4 pt-0">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  asChild
-                  className="rounded-md"
-                >
-                  <Link
-                    href="https://github.com/username/thats-what-she-said-bot"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center"
-                  >
-                    <Github className="mr-2 h-4 w-4" />
-                    Code
-                  </Link>
-                </Button>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  asChild
-                  className="rounded-md"
-                >
-                  <Link
-                    href="https://discord.com/api/oauth2/authorize?client_id=123456789&permissions=0&scope=bot"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center"
-                  >
-                    Demo
-                  </Link>
-                </Button>
-              </CardFooter>
             </Card>
 
             <Card className="relative overflow-hidden border rounded-lg border-primary/10 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
@@ -291,40 +258,6 @@ export default function Home() {
                   </Badge>
                 </div>
               </CardContent>
-
-              <CardFooter className="relative flex gap-2 p-4 pt-0 z-10">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  asChild
-                  className="rounded-md transition-all hover:scale-[1.03] hover:shadow-primary/30"
-                >
-                  <Link
-                    href="https://github.com/BigBen-7/Fine-Tunes"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center"
-                  >
-                    <Github className="mr-2 h-4 w-4" />
-                    Code
-                  </Link>
-                </Button>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  asChild
-                  className="rounded-md transition-all hover:scale-[1.03] hover:shadow-primary/30"
-                >
-                  <Link
-                    href="https://finetunes.vercel.app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center"
-                  >
-                    Demo
-                  </Link>
-                </Button>
-              </CardFooter>
             </Card>
           </div>
 
