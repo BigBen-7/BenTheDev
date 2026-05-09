@@ -12,6 +12,7 @@ import { FaGithub, FaReact } from "react-icons/fa";
 import { FaGitAlt } from "react-icons/fa6";
 import { SiNestjs, SiPostgresql } from "react-icons/si";
 import { Button } from "@/components/ui/button";
+import { ResumeModal } from "@/components/resume-modal";
 import {
   Card,
   CardContent,
@@ -72,8 +73,9 @@ export function AboutContent() {
               </Link>
             </Button>
           </div>
-          <div className="text-center">
-            <Button variant="outline" asChild>
+          <div className="text-center flex flex-col gap-2">
+            <ResumeModal className="w-full" />
+            <Button variant="outline" asChild className="w-full">
               <a href="/Benard's-resume.pdf" download>
                 <Download className="mr-2 h-4 w-4" />
                 Download Resume

@@ -9,10 +9,9 @@ import {
   Clock,
   MapPin,
   ExternalLink,
-  LinkIcon,
   Download,
 } from "lucide-react";
-import Link from "next/link";
+import { ResumeModal } from "@/components/resume-modal";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -142,20 +141,12 @@ export function ContactContent() {
               </p>
           </CardContent>
           <CardFooter className="flex flex-col gap-2">
+            <ResumeModal className="w-full" />
             <Button variant="outline" asChild className="w-full">
-              <Link
-                href="https://drive.google.com/file/d/1SkiND40IFebFTnB7j8bDYwotqMrf26tX/view?usp=drive_link"
-                download
-              >
-                <ExternalLink className="mr-2 h-4 w-4" />
-                View Resume
-              </Link>
-            </Button>
-            <Button variant="outline" asChild className="w-full">
-                <a href="/Benard's-resume.pdf" download>
-                  <Download  />
-                  Download Resume
-                </a>
+              <a href="/Benard's-resume.pdf" download>
+                <Download className="mr-2 h-4 w-4" />
+                Download Resume
+              </a>
             </Button>
           </CardFooter>
         </Card>
