@@ -9,7 +9,6 @@ import {
   Clock,
   MapPin,
   ExternalLink,
-  Download,
 } from "lucide-react";
 import { ResumeModal } from "@/components/resume-modal";
 
@@ -37,7 +36,7 @@ export function ContactContent() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
-        <Card className="overflow-hidden border-none shadow-md bg-gradient-to-br from-primary/5 to-primary/10">
+        <Card className="overflow-hidden">
           <CardHeader className="pb-2">
             <div className="flex items-center gap-3">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20">
@@ -63,7 +62,7 @@ export function ContactContent() {
           </CardFooter>
         </Card>
 
-        <Card className="overflow-hidden border-none shadow-md bg-gradient-to-br from-primary/5 to-primary/10">
+        <Card className="overflow-hidden">
           <CardHeader className="pb-2">
             <div className="flex items-center gap-3">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20">
@@ -93,7 +92,7 @@ export function ContactContent() {
           </CardFooter>
         </Card>
 
-        <Card className="overflow-hidden border-none shadow-md bg-gradient-to-br from-primary/5 to-primary/10">
+        <Card className="overflow-hidden">
           <CardHeader className="pb-2">
             <div className="flex items-center gap-3">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20">
@@ -124,7 +123,7 @@ export function ContactContent() {
           </CardFooter>
         </Card>
 
-        <Card className="overflow-hidden border-none shadow-md bg-gradient-to-br from-primary/5 to-primary/10">
+        <Card className="overflow-hidden">
           <CardHeader className="pb-2">
             <div className="flex items-center gap-3">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20">
@@ -140,14 +139,8 @@ export function ContactContent() {
                 Get a comprehensive overview of my skills and experience
               </p>
           </CardContent>
-          <CardFooter className="flex flex-col gap-2">
+          <CardFooter>
             <ResumeModal className="w-full" />
-            <Button variant="outline" asChild className="w-full">
-              <a href="/resume.pdf" download>
-                <Download className="mr-2 h-4 w-4" />
-                Download Resume
-              </a>
-            </Button>
           </CardFooter>
         </Card>
       </div>

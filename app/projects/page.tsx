@@ -32,7 +32,7 @@ export default function ProjectsPage() {
       </div>
 
       <div className="mt-8 space-y-6">
-        <Card className="overflow-hidden">
+        <Card className="overflow-hidden liquid-glass">
           <div className="md:grid md:grid-cols-2">
             <div className="bg-muted/50 flex items-center justify-center p-6">
               <div className="aspect-video w-full max-w-sm rounded-md bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center">
@@ -66,7 +66,7 @@ export default function ProjectsPage() {
           </div>
         </Card>
 
-        <Card className="overflow-hidden">
+        <Card className="overflow-hidden liquid-glass">
           <div className="md:grid md:grid-cols-2">
             <div className="bg-muted/50 flex items-center justify-center p-6">
               <div className="relative aspect-video w-full max-w-xl overflow-hidden rounded-md">

@@ -1,6 +1,5 @@
 import {
   Calendar,
-  Download,
   FileCode,
   Mail,
 } from "lucide-react";
@@ -71,14 +70,8 @@ export function AboutContent() {
               </Link>
             </Button>
           </div>
-          <div className="text-center flex flex-col gap-2">
+          <div className="text-center">
             <ResumeModal className="w-full" />
-            <Button variant="outline" asChild className="w-full">
-              <a href="/resume.pdf" download>
-                <Download className="mr-2 h-4 w-4" />
-                Download Resume
-              </a>
-            </Button>
           </div>
         </CardContent>
       </Card>

@@ -59,7 +59,7 @@ export function SlidePanel({
       {/* Panel */}
       <div
         className={cn(
-          "fixed inset-y-0 z-50 w-full sm:max-w-lg bg-background shadow-lg transition-transform duration-300 ease-in-out",
+          "fixed inset-y-0 z-50 w-full sm:max-w-lg panel-glass transition-transform duration-300 ease-in-out",
           side === "right" ? "right-0" : "left-0",
           isOpen
             ? "translate-x-0"
@@ -69,7 +69,7 @@ export function SlidePanel({
         )}
       >
         <div className="flex h-full flex-col overflow-auto">
-          <div className="sticky top-0 z-10 flex items-center justify-between border-b bg-background/95 p-4 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+          <div className="sticky top-0 z-10 flex items-center justify-between p-4 panel-header-glass">
             <h2 className="text-lg font-semibold">{title}</h2>
             <Button
               variant="ghost"

@@ -33,8 +33,8 @@ export default function Home() {
   const [isContactOpen, setIsContactOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-10 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <div className="min-h-screen">
+      <header className="sticky top-0 z-10 w-full nav-glass">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="text-xl font-bold tracking-tight">
@@ -94,7 +94,7 @@ export default function Home() {
               </div>
             </div>
             <div className="w-full md:w-auto mt-8 md:mt-0">
-              <Card className="flex flex-col gap-2 min-w-[240px] rounded-xl border bg-card p-6 shadow-sm">
+              <Card className="flex flex-col gap-2 min-w-[240px] rounded-xl p-6 liquid-glass">
                 <div className="flex items-center gap-4">
                   <div className="h-12 w-12 rounded-full overflow-hidden">
                     <Image src="/Benard.png" alt="Benard" width={48} height={48} className="object-cover w-full h-full" />
@@ -173,7 +173,7 @@ export default function Home() {
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2">
-            <Card className="relative overflow-hidden border rounded-lg border-primary/10 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+            <Card className="relative overflow-hidden liquid-glass rounded-lg">
               <CardHeader className="p-4 pb-2">
                 <CardTitle className="text-xl">that'swhatshesaid</CardTitle>
                 <CardDescription>
@@ -196,11 +196,9 @@ export default function Home() {
               </CardFooter>
             </Card>
 
-            <Card className="relative overflow-hidden border rounded-lg border-primary/10 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
-              {/* Soft glow background */}
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-400/10 to-teal-400/10 opacity-0 blur-2xl transition-opacity duration-500 hover:opacity-100" />
+            <Card className="relative overflow-hidden liquid-glass rounded-lg">
 
-              <CardHeader className="relative p-4 pb-2 z-10">
+              <CardHeader className="p-4 pb-2">
                 <CardTitle className="text-xl font-semibold">
                   fineTunes
                 </CardTitle>
@@ -210,7 +208,7 @@ export default function Home() {
                 </CardDescription>
               </CardHeader>
 
-              <CardContent className="relative p-4 pt-2 z-10">
+              <CardContent className="p-4 pt-2">
                 <div className="flex flex-wrap gap-2 mb-4">
                   <Badge variant="secondary" className="rounded-md">React</Badge>
                   <Badge variant="secondary" className="rounded-md">Next.js</Badge>
@@ -218,7 +216,7 @@ export default function Home() {
                   <Badge variant="secondary" className="rounded-md">Gemini API</Badge>
                 </div>
               </CardContent>
-              <CardFooter className="relative p-4 pt-0 z-10 flex gap-2">
+              <CardFooter className="p-4 pt-0 flex gap-2">
                 <Button variant="outline" size="sm" asChild>
                   <Link href="/projects" className="flex items-center gap-1">
                     View Project <ArrowRight className="h-3 w-3" />
@@ -255,7 +253,7 @@ export default function Home() {
           </div>
 
           <div className="grid gap-6">
-            <Card className="border border-primary/10 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+            <Card className="liquid-glass">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-base sm:text-lg md:text-xl">
                   <span className="relative inline-flex h-2 w-2">

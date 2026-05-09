@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Download, FileText } from "lucide-react"
+import { FileText } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -31,16 +31,8 @@ export function ResumeModal({
 
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-w-4xl w-[90vw] h-[90vh] flex flex-col gap-0 p-0">
-          <div className="flex items-center justify-between px-6 py-4 border-b shrink-0">
+          <div className="px-6 py-4 border-b shrink-0">
             <DialogTitle className="text-base font-semibold">Resume</DialogTitle>
-            <div className="flex items-center gap-2 mr-8">
-              <Button variant="outline" size="sm" asChild>
-                <a href="/resume.pdf" download>
-                  <Download className="mr-2 h-4 w-4" />
-                  Download
-                </a>
-              </Button>
-            </div>
           </div>
           <iframe
             src="/resume.pdf"
