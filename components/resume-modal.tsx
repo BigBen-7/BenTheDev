@@ -35,7 +35,7 @@ export function ResumeModal({
             <DialogTitle className="text-base font-semibold">Resume</DialogTitle>
             <div className="flex items-center gap-2 mr-8">
               <Button variant="outline" size="sm" asChild>
-                <a href="/Benard's-resume.pdf" download>
+                <a href="/resume.pdf" download>
                   <Download className="mr-2 h-4 w-4" />
                   Download
                 </a>
@@ -43,7 +43,7 @@ export function ResumeModal({
             </div>
           </div>
           <iframe
-            src="/Benard's-resume.pdf"
+            src="/resume.pdf"
             className="flex-1 w-full rounded-b-lg"
             title="Benard Simon Resume"
           />

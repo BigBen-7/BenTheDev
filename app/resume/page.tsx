@@ -14,14 +14,14 @@ export default function ResumePage() {
           Back
         </Link>
         <Button size="sm" variant="outline" asChild className="ml-auto">
-          <a href="/Benard's-resume.pdf" download>
+          <a href="/resume.pdf" download>
             <Download className="mr-2 h-4 w-4" />
             Download
           </a>
         </Button>
       </div>
       <iframe
-        src="/Benard's-resume.pdf"
+        src="/resume.pdf"
         className="flex-1 w-full"
         title="Benard Simon Resume"
       />

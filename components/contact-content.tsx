@@ -143,7 +143,7 @@ export function ContactContent() {
           <CardFooter className="flex flex-col gap-2">
             <ResumeModal className="w-full" />
             <Button variant="outline" asChild className="w-full">
-              <a href="/Benard's-resume.pdf" download>
+              <a href="/resume.pdf" download>
                 <Download className="mr-2 h-4 w-4" />
                 Download Resume
               </a>
