@@ -1,9 +1,9 @@
+import { Calendar, FileCode, Mail } from "lucide-react";
 import {
-  Calendar,
-  FileCode,
-  Mail,
-} from "lucide-react";
-import { TbBrandNextjs, TbBrandTypescript, TbBrandReactNative } from "react-icons/tb";
+  TbBrandNextjs,
+  TbBrandTypescript,
+  TbBrandReactNative,
+} from "react-icons/tb";
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaReact } from "react-icons/fa";
 import { FaGitAlt } from "react-icons/fa6";
@@ -36,9 +36,9 @@ export function AboutContent() {
           </div>
           <CardTitle className="text-center text-2xl mt-4">Benard</CardTitle>
           <CardDescription className="text-center">
-            Frontend Engineer{" "}
-            <span className="font-extrabold text-white">|</span> OpenSource
-            Contributor
+            Software Engineer{" "}
+            <span className="font-extrabold text-white">|</span> Mobile &amp; Web{" "}
+            <span className="font-extrabold text-white">|</span> OpenSource Contributor
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -82,9 +82,9 @@ export function AboutContent() {
         </CardHeader>
         <CardContent className="space-y-4">
           <p>
-            Frontend Engineer focused on building fast, accessible, and
-            well-crafted web experiences. I work across the full frontend stack
-            — from architecture and component design to performance and
+            Software Engineer focused on building fast, accessible, and
+            well-crafted web and mobile experiences. I work across the full
+            stack — from architecture and component design to performance and
             polish — with a strong bias toward shipping things that actually
             feel good to use.
           </p>
@@ -130,7 +130,7 @@ export function AboutContent() {
                 NestJs
               </Badge>
               <Badge>
-              <TbBrandReactNative />
+                <TbBrandReactNative />
                 React Native
               </Badge>
             </div>

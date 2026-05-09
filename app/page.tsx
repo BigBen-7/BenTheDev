@@ -69,11 +69,11 @@ export default function Home() {
                   Benard Simon<span className="text-primary">.</span>
                 </h1>
                 <p className="text-xl font-semibold text-primary">
-                  Frontend Engineer | OpenSource Contributor
+                  Software Engineer | Mobile & Web | OpenSource Contributor
                 </p>
               </div>
               <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                I create websites that are a pleasure to use. I design them with
+                I build web and mobile apps that are a pleasure to use — with
                 beautiful typography, meaningful transitions, and thoughtful
                 interactions that delight people.
               </p>
@@ -97,7 +97,13 @@ export default function Home() {
               <Card className="flex flex-col gap-2 min-w-[240px] rounded-xl p-6 liquid-glass">
                 <div className="flex items-center gap-4">
                   <div className="h-12 w-12 rounded-full overflow-hidden">
-                    <Image src="/Benard.png" alt="Benard" width={48} height={48} className="object-cover w-full h-full" />
+                    <Image
+                      src="/Benard.png"
+                      alt="Benard"
+                      width={48}
+                      height={48}
+                      className="object-cover w-full h-full"
+                    />
                   </div>
                   <div>
                     <h3 className="font-semibold">Available for work</h3>
@@ -177,14 +183,21 @@ export default function Home() {
               <CardHeader className="p-4 pb-2">
                 <CardTitle className="text-xl">that'swhatshesaid</CardTitle>
                 <CardDescription>
-                  Discord bot serving random quotes from the tv-show (The Office)
+                  Discord bot serving random quotes from the tv-show (The
+                  Office)
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-4 pt-2">
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <Badge variant="secondary" className="rounded-md">TypeScript</Badge>
-                  <Badge variant="secondary" className="rounded-md">Discord.js</Badge>
-                  <Badge variant="secondary" className="rounded-md">Node.js</Badge>
+                  <Badge variant="secondary" className="rounded-md">
+                    TypeScript
+                  </Badge>
+                  <Badge variant="secondary" className="rounded-md">
+                    Discord.js
+                  </Badge>
+                  <Badge variant="secondary" className="rounded-md">
+                    Node.js
+                  </Badge>
                 </div>
               </CardContent>
               <CardFooter className="p-4 pt-0">
@@ -197,7 +210,6 @@ export default function Home() {
             </Card>
 
             <Card className="relative overflow-hidden liquid-glass rounded-lg">
-
               <CardHeader className="p-4 pb-2">
                 <CardTitle className="text-xl font-semibold">
                   fineTunes
@@ -210,10 +222,18 @@ export default function Home() {
 
               <CardContent className="p-4 pt-2">
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <Badge variant="secondary" className="rounded-md">React</Badge>
-                  <Badge variant="secondary" className="rounded-md">Next.js</Badge>
-                  <Badge variant="secondary" className="rounded-md">Spotify API</Badge>
-                  <Badge variant="secondary" className="rounded-md">Gemini API</Badge>
+                  <Badge variant="secondary" className="rounded-md">
+                    React
+                  </Badge>
+                  <Badge variant="secondary" className="rounded-md">
+                    Next.js
+                  </Badge>
+                  <Badge variant="secondary" className="rounded-md">
+                    Spotify API
+                  </Badge>
+                  <Badge variant="secondary" className="rounded-md">
+                    Gemini API
+                  </Badge>
                 </div>
               </CardContent>
               <CardFooter className="p-4 pt-0 flex gap-2">
@@ -223,7 +243,12 @@ export default function Home() {
                   </Link>
                 </Button>
                 <Button size="sm" asChild>
-                  <Link href="https://fine-tunes.vercel.app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
+                  <Link
+                    href="https://fine-tunes.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1"
+                  >
                     Live Demo <ExternalLink className="h-3 w-3" />
                   </Link>
                 </Button>
@@ -314,7 +339,6 @@ export default function Home() {
             </Card>
           </div>
         </section>
-
       </main>
       <footer className="border-t">
         <div className="container flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0">
