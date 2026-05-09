@@ -26,6 +26,7 @@ import { ProjectCard } from "@/components/project-card";
 import { SlidePanel } from "@/components/slide-panel";
 import { AboutContent } from "@/components/about-content";
 import { ContactContent } from "@/components/contact-content";
+import { ResumeModal } from "@/components/resume-modal";
 
 export default function Home() {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
@@ -415,12 +416,7 @@ export default function Home() {
               <CardContent className="relative z-10">
                 <ul className="space-y-2 text-sm sm:text-base">
                   <li>
-                    <Link
-                      href="https://drive.google.com/file/d/1SkiND40IFebFTnB7j8bDYwotqMrf26tX/view?usp=drive_link"
-                      className="flex items-center gap-2 hover:underline transition-all hover:text-primary"
-                    >
-                      <ArrowRight className="h-4 w-4" /> View Resume
-                    </Link>
+                    <ResumeModal variant="ghost" className="h-auto p-0 text-sm hover:text-primary hover:bg-transparent" />
                   </li>
                   <li>
                     <Link
