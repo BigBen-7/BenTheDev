@@ -1,14 +1,12 @@
 import {
   Calendar,
   Download,
-  Github,
   FileCode,
-  Linkedin,
   Mail,
 } from "lucide-react";
 import { TbBrandNextjs, TbBrandTypescript, TbBrandReactNative } from "react-icons/tb";
 import Link from "next/link";
-import { FaGithub, FaReact } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaReact } from "react-icons/fa";
 import { FaGitAlt } from "react-icons/fa6";
 import { SiNestjs, SiPostgresql } from "react-icons/si";
 import { Button } from "@/components/ui/button";
@@ -52,7 +50,7 @@ export function AboutContent() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Github className="h-4 w-4" />
+                <FaGithub className="h-4 w-4" />
                 <span className="sr-only">GitHub</span>
               </Link>
             </Button>
@@ -62,7 +60,7 @@ export function AboutContent() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Linkedin className="h-4 w-4" />
+                <FaLinkedin className="h-4 w-4" />
                 <span className="sr-only">LinkedIn</span>
               </Link>
             </Button>
@@ -91,19 +89,16 @@ export function AboutContent() {
         </CardHeader>
         <CardContent className="space-y-4">
           <p>
-            <em>
-              A creative professional with a strong portfolio in digital design,
-              including experience with front-end dev. Experienced working from
-              concepts to production, and with stakeholders from multiple
-              disciplines.
-            </em>
+            Frontend Engineer focused on building fast, accessible, and
+            well-crafted web experiences. I work across the full frontend stack
+            — from architecture and component design to performance and
+            polish — with a strong bias toward shipping things that actually
+            feel good to use.
           </p>
           <p>
-            <em>
-              I create websites that are a pleasure to use. I design them with
-              beautiful typography, meaningful transitions, and thoughtful
-              interactions that delight people.
-            </em>
+            Outside of personal projects, I actively contribute to open-source
+            across the Starknet, Stellar, and Worldcoin ecosystems, focusing on
+            UI, developer experience, and frontend infrastructure.
           </p>
         </CardContent>
       </Card>

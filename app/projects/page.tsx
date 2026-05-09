@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, Github, ExternalLink } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -11,7 +11,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function ProjectsPage() {
   return (
@@ -32,149 +31,96 @@ export default function ProjectsPage() {
         </p>
       </div>
 
-      <div className="mt-8">
-        <Tabs defaultValue="all">
-          <TabsList className="mb-6">
-            <TabsTrigger value="all">All Projects</TabsTrigger>
-            <TabsTrigger value="web">Web Development</TabsTrigger>
-            <TabsTrigger value="open-source">Open Source</TabsTrigger>
-          </TabsList>
-
-          <TabsContent value="all" className="space-y-6">
-            <Card className="overflow-hidden">
-              <div className="md:grid md:grid-cols-2">
-                <div className="bg-muted/50 flex items-center justify-center p-6">
-                  <div className="aspect-video w-full max-w-sm rounded-md bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center">
-                    <span className="text-xl font-bold text-primary">
-                      that'swhatshesaid
-                    </span>
-                  </div>
-                </div>
-                <div>
-                  <CardHeader>
-                    <CardTitle className="text-2xl">
-                      that'swhatshesaid
-                    </CardTitle>
-                    <CardDescription>
-                      Discord bot serving random quotes from the tv-show (The
-                      Office)
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      <div className="flex flex-wrap gap-2">
-                        <Badge>TypeScript</Badge>
-                        <Badge>Discord.js</Badge>
-                        <Badge>Node.js</Badge>
-                      </div>
-                      <p className="text-sm text-muted-foreground">
-                        A Discord bot that responds with random quotes from The
-                        Office TV show. The bot uses Discord.js and includes
-                        features like command handling, quote categorization,
-                        and character-specific quotes.
-                      </p>
-                    </div>
-                  </CardContent>
-                  <CardFooter className="flex gap-2">
-                    <Button variant="outline" size="sm" asChild>
-                      <Link
-                        href="https://github.com/username/thats-what-she-said-bot"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Github className="mr-2 h-4 w-4" />
-                        View Code
-                      </Link>
-                    </Button>
-                    <Button size="sm" asChild>
-                      <Link
-                        href="https://discord.com/api/oauth2/authorize?client_id=123456789&permissions=0&scope=bot"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <ExternalLink className="mr-2 h-4 w-4" />
-                        Add to Discord
-                      </Link>
-                    </Button>
-                  </CardFooter>
-                </div>
+      <div className="mt-8 space-y-6">
+        <Card className="overflow-hidden">
+          <div className="md:grid md:grid-cols-2">
+            <div className="bg-muted/50 flex items-center justify-center p-6">
+              <div className="aspect-video w-full max-w-sm rounded-md bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center">
+                <span className="text-xl font-bold text-primary">
+                  that'swhatshesaid
+                </span>
               </div>
-            </Card>
-
-            <Card className="overflow-hidden">
-              <div className="md:grid md:grid-cols-2">
-                <div className="bg-muted/50 flex items-center justify-center p-6">
-                  {/* The main container for your preview */}
-                  <div className="relative aspect-video w-full max-w-xl overflow-hidden rounded-md">
-                    <video
-                      src="/FineTune.mov"
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="absolute inset-0 h-full w-full object-cover"
-                    ></video>
-
-                    {/* 2. The Dark Overlay (to make the text stand out) */}
-                    <div className="absolute inset-0 bg-black/0 bg-gradient-to-br from-primary/2 to-primary/40"></div>
+            </div>
+            <div>
+              <CardHeader>
+                <CardTitle className="text-2xl">that'swhatshesaid</CardTitle>
+                <CardDescription>
+                  Discord bot serving random quotes from the tv-show (The Office)
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="flex flex-wrap gap-2">
+                    <Badge>TypeScript</Badge>
+                    <Badge>Discord.js</Badge>
+                    <Badge>Node.js</Badge>
                   </div>
+                  <p className="text-sm text-muted-foreground">
+                    A Discord bot that responds with random quotes from The
+                    Office TV show. Built with Discord.js, it includes command
+                    handling, quote categorization, and character-specific quotes.
+                  </p>
                 </div>
-                <div>
-                  <CardHeader>
-                    <CardTitle className="text-2xl">fine-tunes</CardTitle>
-                    <CardDescription>
-                      An album finder that lets you find albums from your
-                      favorite artists using Spotify's API
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      <div className="flex flex-wrap gap-2">
-                        <Badge>React</Badge>
-                        <Badge>Next.js</Badge>
-                        <Badge>Spotify API</Badge>
-                        <Badge>Gemini API</Badge>
-                      </div>
-                      <p className="text-sm text-muted-foreground">
-                        Fine-Tunes is a full-stack web application that creates
-                        a deeply personalized music discovery experience for
-                        Spotify users. It connects securely to the Spotify API
-                        to build a dashboard of the user's listening habits and
-                        leverages the power of the Google Gemini API to generate
-                        intelligent, context-aware playlists from natural
-                        language prompts.
-                      </p>
-                    </div>
-                  </CardContent>
-                  <CardFooter className="flex gap-2">
-                    <Button variant="outline" size="sm" asChild>
-                      <Link
-                        href="https://github.com/username/find-tunes"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Github className="mr-2 h-4 w-4" />
-                        View Code
-                      </Link>
-                    </Button>
-                    <Button size="sm" asChild>
-                      <Link
-                        href="https://fine-tunes.vercel.app"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <ExternalLink className="mr-2 h-4 w-4" />
-                        Live Demo
-                      </Link>
-                    </Button>
-                  </CardFooter>
-                </div>
-              </div>
-            </Card>
-          </TabsContent>
+              </CardContent>
+            </div>
+          </div>
+        </Card>
 
-          {/* Other tab contents would be similar */}
-        </Tabs>
+        <Card className="overflow-hidden">
+          <div className="md:grid md:grid-cols-2">
+            <div className="bg-muted/50 flex items-center justify-center p-6">
+              <div className="relative aspect-video w-full max-w-xl overflow-hidden rounded-md">
+                <video
+                  src="/FineTune.mov"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/2 to-primary/40" />
+              </div>
+            </div>
+            <div>
+              <CardHeader>
+                <CardTitle className="text-2xl">fine-tunes</CardTitle>
+                <CardDescription>
+                  A personalized music discovery dashboard with AI-powered
+                  playlist generation
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="flex flex-wrap gap-2">
+                    <Badge>React</Badge>
+                    <Badge>Next.js</Badge>
+                    <Badge>Spotify API</Badge>
+                    <Badge>Gemini API</Badge>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Fine-Tunes connects securely to the Spotify API to build a
+                    dashboard of the user's listening habits and leverages the
+                    Google Gemini API to generate intelligent, context-aware
+                    playlists from natural language prompts.
+                  </p>
+                </div>
+              </CardContent>
+              <CardFooter>
+                <Button size="sm" asChild>
+                  <Link
+                    href="https://fine-tunes.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2"
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                    Live Demo
+                  </Link>
+                </Button>
+              </CardFooter>
+            </div>
+          </div>
+        </Card>
       </div>
     </div>
   );

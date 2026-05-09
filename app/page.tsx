@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   Github,
@@ -26,7 +27,6 @@ import { ProjectCard } from "@/components/project-card";
 import { SlidePanel } from "@/components/slide-panel";
 import { AboutContent } from "@/components/about-content";
 import { ContactContent } from "@/components/contact-content";
-import { ResumeModal } from "@/components/resume-modal";
 
 export default function Home() {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
@@ -41,13 +41,7 @@ export default function Home() {
               benard.dev
             </Link>
           </div>
-          <nav className="hidden md:flex items-center gap-6 text-sm">
-            <Link
-              href="/"
-              className="font-medium transition-colors hover:text-foreground/80"
-            >
-              Home
-            </Link>
+          <nav className="flex items-center gap-6 text-sm">
             <Link
               href="/projects"
               className="font-medium transition-colors hover:text-foreground/80"
@@ -63,29 +57,6 @@ export default function Home() {
           </nav>
           <div className="flex items-center gap-2">
             <ThemeToggle />
-            <Button
-              variant="ghost"
-              size="icon"
-              className="rounded-full md:hidden"
-            >
-              <span className="sr-only">Toggle menu</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-5 w-5"
-              >
-                <line x1="4" x2="20" y1="12" y2="12" />
-                <line x1="4" x2="20" y1="6" y2="6" />
-                <line x1="4" x2="20" y1="18" y2="18" />
-              </svg>
-            </Button>
           </div>
         </div>
       </header>
@@ -94,9 +65,6 @@ export default function Home() {
           <div className="flex flex-col items-start gap-8 md:flex-row md:justify-between">
             <div className="space-y-6 md:max-w-[60%]">
               <div className="space-y-2">
-                <p className="text-lg text-muted-foreground">
-                  Hello, My name is,
-                </p>
                 <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
                   Benard Simon<span className="text-primary">.</span>
                 </h1>
@@ -128,8 +96,8 @@ export default function Home() {
             <div className="w-full md:w-auto mt-8 md:mt-0">
               <Card className="flex flex-col gap-2 min-w-[240px] rounded-xl border bg-card p-6 shadow-sm">
                 <div className="flex items-center gap-4">
-                  <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-lg font-bold text-primary">B</span>
+                  <div className="h-12 w-12 rounded-full overflow-hidden">
+                    <Image src="/Benard.png" alt="Benard" width={48} height={48} className="object-cover w-full h-full" />
                   </div>
                   <div>
                     <h3 className="font-semibold">Available for work</h3>
@@ -206,27 +174,26 @@ export default function Home() {
 
           <div className="grid gap-6 sm:grid-cols-2">
             <Card className="relative overflow-hidden border rounded-lg border-primary/10 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
-              {" "}
               <CardHeader className="p-4 pb-2">
                 <CardTitle className="text-xl">that'swhatshesaid</CardTitle>
                 <CardDescription>
-                  Discord bot serving random quotes from the tv-show (The
-                  Office)
+                  Discord bot serving random quotes from the tv-show (The Office)
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-4 pt-2">
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <Badge variant="secondary" className="rounded-md">
-                    TypeScript
-                  </Badge>
-                  <Badge variant="secondary" className="rounded-md">
-                    Discord.js
-                  </Badge>
-                  <Badge variant="secondary" className="rounded-md">
-                    Node.js
-                  </Badge>
+                  <Badge variant="secondary" className="rounded-md">TypeScript</Badge>
+                  <Badge variant="secondary" className="rounded-md">Discord.js</Badge>
+                  <Badge variant="secondary" className="rounded-md">Node.js</Badge>
                 </div>
               </CardContent>
+              <CardFooter className="p-4 pt-0">
+                <Button variant="outline" size="sm" asChild>
+                  <Link href="/projects" className="flex items-center gap-1">
+                    View Project <ArrowRight className="h-3 w-3" />
+                  </Link>
+                </Button>
+              </CardFooter>
             </Card>
 
             <Card className="relative overflow-hidden border rounded-lg border-primary/10 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
@@ -245,20 +212,24 @@ export default function Home() {
 
               <CardContent className="relative p-4 pt-2 z-10">
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <Badge variant="secondary" className="rounded-md">
-                    React
-                  </Badge>
-                  <Badge variant="secondary" className="rounded-md">
-                    Next.js
-                  </Badge>
-                  <Badge variant="secondary" className="rounded-md">
-                    Spotify API
-                  </Badge>
-                  <Badge variant="secondary" className="rounded-md">
-                    Gemini API
-                  </Badge>
+                  <Badge variant="secondary" className="rounded-md">React</Badge>
+                  <Badge variant="secondary" className="rounded-md">Next.js</Badge>
+                  <Badge variant="secondary" className="rounded-md">Spotify API</Badge>
+                  <Badge variant="secondary" className="rounded-md">Gemini API</Badge>
                 </div>
               </CardContent>
+              <CardFooter className="relative p-4 pt-0 z-10 flex gap-2">
+                <Button variant="outline" size="sm" asChild>
+                  <Link href="/projects" className="flex items-center gap-1">
+                    View Project <ArrowRight className="h-3 w-3" />
+                  </Link>
+                </Button>
+                <Button size="sm" asChild>
+                  <Link href="https://fine-tunes.vercel.app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
+                    Live Demo <ExternalLink className="h-3 w-3" />
+                  </Link>
+                </Button>
+              </CardFooter>
             </Card>
           </div>
 
@@ -346,109 +317,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="space-y-6 py-8 md:py-12">
-          <div className="space-y-1">
-            <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
-              Get in Touch
-            </h2>
-            <p className="text-muted-foreground">
-              Feel free to reach out for collaborations or just a chat.
-            </p>
-          </div>
-          <div className="flex flex-col gap-4 sm:flex-row">
-            {/* Contact Information Card */}
-            <Card className="relative flex-1 border border-primary/10 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
-              {/* Soft Glow Background */}
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-400/10 to-teal-400/10 opacity-0 blur-2xl transition-opacity duration-500 hover:opacity-100" />
-
-              <CardHeader className="relative z-10">
-                <CardTitle className="text-lg sm:text-xl font-semibold">
-                  Contact Information
-                </CardTitle>
-              </CardHeader>
-
-              <CardContent className="relative space-y-4 z-10">
-                <div className="flex items-center gap-3">
-                  <Mail className="h-5 w-5 text-muted-foreground" />
-                  <p>benardsimon7@gmail.com</p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Github className="h-5 w-5 text-muted-foreground" />
-                  <Link
-                    href="https://github.com/BigBen-7"
-                    className="hover:underline transition-all hover:text-primary"
-                  >
-                    github.com/BigBen-7
-                  </Link>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Linkedin className="h-5 w-5 text-muted-foreground" />
-                  <Link
-                    href="https://www.linkedin.com/in/benard-simon-181413244"
-                    className="hover:underline transition-all hover:text-primary"
-                  >
-                    linkedin.com/in/benard-simon-181413244
-                  </Link>
-                </div>
-              </CardContent>
-
-              <CardFooter className="relative z-10">
-                <Button
-                  onClick={() => setIsContactOpen(true)}
-                  className="w-full transition-all hover:scale-[1.03] hover:shadow-primary/30"
-                >
-                  Send a Message
-                </Button>
-              </CardFooter>
-            </Card>
-
-            {/* Quick Links Card */}
-            <Card className="relative flex-1 border border-primary/10 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
-              {/* Soft Glow Background */}
-              <div className="absolute inset-0 bg-gradient-to-r from-teal-400/10 via-blue-400/10 to-purple-500/10 opacity-0 blur-2xl transition-opacity duration-500 hover:opacity-100" />
-
-              <CardHeader className="relative z-10">
-                <CardTitle className="text-lg sm:text-xl font-semibold">
-                  Quick Links
-                </CardTitle>
-              </CardHeader>
-
-              <CardContent className="relative z-10">
-                <ul className="space-y-2 text-sm sm:text-base">
-                  <li>
-                    <ResumeModal variant="ghost" className="h-auto p-0 text-sm hover:text-primary hover:bg-transparent" />
-                  </li>
-                  <li>
-                    <Link
-                      href="/projects"
-                      className="flex items-center gap-2 hover:underline transition-all hover:text-primary"
-                    >
-                      <ArrowRight className="h-4 w-4" /> Browse Projects
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="https://app.onlydust.com/users/BigBen-7/projects"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 hover:underline transition-all hover:text-primary"
-                    >
-                      <ArrowRight className="h-4 w-4" /> Open Source Work
-                    </Link>
-                  </li>
-                  <li>
-                    <button
-                      onClick={() => setIsContactOpen(true)}
-                      className="flex items-center gap-2 hover:underline text-left w-full transition-all hover:text-primary"
-                    >
-                      <ArrowRight className="h-4 w-4" /> Contact Form
-                    </button>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
       </main>
       <footer className="border-t">
         <div className="container flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0">
