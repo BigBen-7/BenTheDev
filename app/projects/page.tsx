@@ -34,31 +34,115 @@ export default function ProjectsPage() {
       <div className="mt-8 space-y-6">
         <Card className="overflow-hidden liquid-glass">
           <div className="md:grid md:grid-cols-2">
-            <div className="bg-muted/50 flex items-center justify-center p-6">
-              <div className="aspect-video w-full max-w-sm rounded-md bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center">
-                <span className="text-xl font-bold text-primary">
-                  that'swhatshesaid
-                </span>
+            <div className="bg-muted/50 flex items-center justify-center p-4">
+              <div className="relative w-full overflow-hidden rounded-md" style={{ height: '210px' }}>
+                <div
+                  className="absolute top-0 left-0 pointer-events-none"
+                  style={{ width: '1400px', height: '560px', transform: 'scale(0.375)', transformOrigin: 'top left' }}
+                >
+                  <iframe
+                    src="/promo-1400x560.html"
+                    width="1400"
+                    height="560"
+                    style={{ border: 'none', display: 'block' }}
+                  />
+                </div>
               </div>
             </div>
             <div>
               <CardHeader>
-                <CardTitle className="text-2xl">that'swhatshesaid</CardTitle>
+                <CardTitle className="text-2xl">dormant</CardTitle>
                 <CardDescription>
-                  Discord bot serving random quotes from the tv-show (The Office)
+                  Chrome extension that auto-suspends inactive tabs to reclaim RAM
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   <div className="flex flex-wrap gap-2">
                     <Badge>TypeScript</Badge>
-                    <Badge>Discord.js</Badge>
-                    <Badge>Node.js</Badge>
+                    <Badge>React</Badge>
+                    <Badge>Chrome MV3</Badge>
+                    <Badge>Vite</Badge>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    A Discord bot that responds with random quotes from The
-                    Office TV show. Built with Discord.js, it includes command
-                    handling, quote categorization, and character-specific quotes.
+                    Dormant automatically discards tabs that have been inactive
+                    beyond a configurable threshold, freeing up RAM without
+                    losing your browsing context. Features a live popup showing
+                    suspended tab count and estimated MB recovered, domain
+                    whitelisting, and fully local storage — no tracking, no
+                    telemetry.
+                  </p>
+                </div>
+              </CardContent>
+              <CardFooter className="flex gap-2">
+                <Button size="sm" asChild>
+                  <Link
+                    href="https://chromewebstore.google.com/detail/dormant/pipmpmbmfbbfcfibbpdljkemldnnkike"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2"
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                    Install Extension
+                  </Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link
+                    href="https://github.com/BigBen-7/dormant"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2"
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                    GitHub
+                  </Link>
+                </Button>
+              </CardFooter>
+            </div>
+          </div>
+        </Card>
+
+        <Card className="overflow-hidden liquid-glass">
+          <div className="md:grid md:grid-cols-2">
+            <div className="bg-muted/50 flex items-center justify-center p-8">
+              <div className="relative w-36 flex-shrink-0 rounded-[2.5rem] border-4 border-primary/25 bg-gradient-to-b from-primary/20 via-primary/8 to-transparent shadow-xl overflow-hidden" style={{ aspectRatio: '9/19' }}>
+                <div className="absolute top-3 left-1/2 -translate-x-1/2 w-10 h-1.5 rounded-full bg-primary/20" />
+                <div className="flex flex-col items-center justify-center h-full gap-3 pb-4">
+                  <span className="text-4xl">🔁</span>
+                  <span className="text-sm font-bold text-primary tracking-tight">Regain+</span>
+                  <div className="flex gap-1.5">
+                    {[0,1,2,3,4,5,6].map(i => (
+                      <div key={i} className={`w-1.5 h-1.5 rounded-full ${i < 4 ? 'bg-primary' : 'bg-primary/20'}`} />
+                    ))}
+                  </div>
+                  <span className="text-[9px] text-muted-foreground px-3 text-center leading-relaxed">day 4 of 21</span>
+                </div>
+              </div>
+            </div>
+            <div className="relative overflow-hidden">
+              <div className="absolute top-5 right-[-38px] z-10 rotate-45 bg-primary px-14 py-1.5 text-[10px] font-bold tracking-[0.2em] text-white shadow-md uppercase">
+                Coming Soon
+              </div>
+              <CardHeader>
+                <CardTitle className="text-2xl">Regain+</CardTitle>
+                <CardDescription>
+                  21-day habit-replacement mobile app
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="flex flex-wrap gap-2">
+                    <Badge>React Native</Badge>
+                    <Badge>TypeScript</Badge>
+                    <Badge>NestJS</Badge>
+                    <Badge>PostgreSQL</Badge>
+                    <Badge>Turborepo</Badge>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Regain+ helps you break addictive habits by replacing them
+                    with intentional daily actions. Track urges and emotions,
+                    visualize progress over 21 days, and build a new identity —
+                    not just a streak.
                   </p>
                 </div>
               </CardContent>

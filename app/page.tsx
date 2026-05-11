@@ -72,7 +72,7 @@ export default function Home() {
                   Software Engineer | Mobile & Web | OpenSource Contributor
                 </p>
               </div>
-              <p className="max-w-[600px] text-muted-foreground md:text-xl">
+              <p className="max-w-[600px] text-muted-foreground md:text-l">
                 I build web and mobile apps that are a pleasure to use — with
                 beautiful typography, meaningful transitions, and thoughtful
                 interactions that delight people.
@@ -178,13 +178,12 @@ export default function Home() {
             </Button>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <Card className="relative overflow-hidden liquid-glass rounded-lg">
               <CardHeader className="p-4 pb-2">
-                <CardTitle className="text-xl">that'swhatshesaid</CardTitle>
+                <CardTitle className="text-xl">dormant</CardTitle>
                 <CardDescription>
-                  Discord bot serving random quotes from the tv-show (The
-                  Office)
+                  Chrome extension that auto-suspends inactive tabs to reclaim RAM
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-4 pt-2">
@@ -193,17 +192,25 @@ export default function Home() {
                     TypeScript
                   </Badge>
                   <Badge variant="secondary" className="rounded-md">
-                    Discord.js
+                    React
                   </Badge>
                   <Badge variant="secondary" className="rounded-md">
-                    Node.js
+                    Chrome MV3
+                  </Badge>
+                  <Badge variant="secondary" className="rounded-md">
+                    Vite
                   </Badge>
                 </div>
               </CardContent>
-              <CardFooter className="p-4 pt-0">
+              <CardFooter className="p-4 pt-0 flex gap-2">
                 <Button variant="outline" size="sm" asChild>
                   <Link href="/projects" className="flex items-center gap-1">
                     View Project <ArrowRight className="h-3 w-3" />
+                  </Link>
+                </Button>
+                <Button size="sm" asChild>
+                  <Link href="https://chromewebstore.google.com/detail/dormant/pipmpmbmfbbfcfibbpdljkemldnnkike" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
+                    Install <ExternalLink className="h-3 w-3" />
                   </Link>
                 </Button>
               </CardFooter>
@@ -250,6 +257,35 @@ export default function Home() {
                     className="flex items-center gap-1"
                   >
                     Live Demo <ExternalLink className="h-3 w-3" />
+                  </Link>
+                </Button>
+              </CardFooter>
+            </Card>
+
+            <Card className="relative overflow-hidden liquid-glass rounded-lg">
+              <CardHeader className="p-4 pb-2">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <CardTitle className="text-xl">Regain+</CardTitle>
+                  <span className="inline-flex items-center gap-1 rounded-full border-2 border-dashed border-primary bg-primary/10 px-2.5 py-0.5 text-[10px] font-bold tracking-widest text-primary uppercase animate-pulse">
+                    🚧 Coming Soon
+                  </span>
+                </div>
+                <CardDescription>
+                  21-day habit-replacement mobile app
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="p-4 pt-2">
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <Badge variant="secondary" className="rounded-md">React Native</Badge>
+                  <Badge variant="secondary" className="rounded-md">TypeScript</Badge>
+                  <Badge variant="secondary" className="rounded-md">NestJS</Badge>
+                  <Badge variant="secondary" className="rounded-md">PostgreSQL</Badge>
+                </div>
+              </CardContent>
+              <CardFooter className="p-4 pt-0">
+                <Button variant="outline" size="sm" asChild>
+                  <Link href="/projects" className="flex items-center gap-1">
+                    View Project <ArrowRight className="h-3 w-3" />
                   </Link>
                 </Button>
               </CardFooter>
