@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dormant — Promo 1400×560</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    width: 1400px;
+    height: 560px;
+    min-width: 1400px;
+    min-height: 560px;
+    max-width: 1400px;
+    max-height: 560px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #0a0a0a;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* subtle grid */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+  }
+
+  /* wide vignette — darkens edges, keeps center live */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(ellipse 120% 100% at 50% 50%, transparent 35%, #0a0a0a 85%);
+    pointer-events: none;
+  }
+
+  .layout {
+    position: relative;
+    z-index: 1;
+    width: 1400px;
+    height: 560px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* ── LEFT ─────────────────────────────────────────────── */
+  .left {
+    width: 480px;
+    flex-shrink: 0;
+    padding: 0 48px 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #7c6af7;
+    margin-bottom: 16px;
+  }
+
+  .headline {
+    font-size: 80px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    color: #e8e8e8;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .tagline {
+    font-size: 14px;
+    font-weight: 400;
+    color: #666;
+    line-height: 1.7;
+    max-width: 320px;
+    margin-bottom: 28px;
+  }
+
+  .pills {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .pill {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    padding: 4px 14px;
+    border: 1px solid #1e1e1e;
+    border-radius: 20px;
+    color: #555;
+    background: #111;
+    width: fit-content;
+  }
+
+  /* ── CENTER ───────────────────────────────────────────── */
+  .center {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .center-glow {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(ellipse at center, rgba(124,106,247,0.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* ── RIGHT ────────────────────────────────────────────── */
+  .right {
+    width: 500px;
+    flex-shrink: 0;
+    padding: 0 80px 0 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+
+  /* ── TERMINAL CARD ────────────────────────────────────── */
+  .terminal {
+    background: #0c0c0c;
+    border: 1px solid #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 1px rgba(124,106,247,0.08),
+      0 0 48px rgba(124,106,247,0.14),
+      0 24px 48px rgba(0,0,0,0.6);
+  }
+
+  .term-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    background: #111;
+    border-bottom: 1px solid #1e1e1e;
+  }
+
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dot-r { background: #3a1a1a; }
+  .dot-y { background: #2e2a14; }
+  .dot-g { background: #1a2e1a; }
+
+  .term-title {
+    font-size: 10px;
+    color: #3a3a3a;
+    margin-left: 6px;
+    letter-spacing: 0.05em;
+  }
+
+  .term-body {
+    padding: 18px 20px 22px;
+    font-size: 12px;
+    line-height: 2.1;
+    text-align: left;
+  }
+
+  .tl { display: block; white-space: nowrap; }
+  .t-tag  { color: #333; }
+  .t-key  { color: #7c6af7; }
+  .t-val  { color: #e8e8e8; }
+  .t-dim  { color: #3a3a3a; }
+  .t-ok   { color: #4ade80; }
+  .t-warn { color: #f59e0b; }
+
+  .cursor {
+    display: inline-block;
+    width: 7px;
+    height: 13px;
+    background: #7c6af7;
+    vertical-align: middle;
+    margin-left: 1px;
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+  }
+
+  /* ── URL watermark ────────────────────────────────────── */
+  .url {
+    position: absolute;
+    bottom: 20px;
+    right: 80px;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: #333;
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+
+  <!-- LEFT: headline + tagline + pills -->
+  <div class="left">
+    <span class="label">Chrome Extension</span>
+    <h1 class="headline">DORMANT</h1>
+    <p class="tagline">Auto-suspends inactive tabs to save RAM. Stays out of your way.</p>
+    <div class="pills">
+      <span class="pill">Zero external deps</span>
+      <span class="pill">Manifest V3</span>
+      <span class="pill">Open source · MIT</span>
+    </div>
+  </div>
+
+  <!-- CENTER: moon icon 120px -->
+  <div class="center">
+    <div class="center-glow"></div>
+    <svg width="120" height="120" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <mask id="moon2">
+          <circle cx="42" cy="54" r="40" fill="white"/>
+          <circle cx="62" cy="47" r="33" fill="black"/>
+        </mask>
+      </defs>
+      <circle cx="42" cy="54" r="40" fill="#7c6af7" mask="url(#moon2)"/>
+      <text x="65" y="37" font-family="'JetBrains Mono', monospace"
+            font-size="26" font-weight="700" fill="#7c6af7">z</text>
+    </svg>
+  </div>
+
+  <!-- RIGHT: terminal card -->
+  <div class="right">
+    <div class="terminal">
+      <div class="term-bar">
+        <span class="dot dot-r"></span>
+        <span class="dot dot-y"></span>
+        <span class="dot dot-g"></span>
+        <span class="term-title">dormant &mdash; service worker</span>
+      </div>
+      <div class="term-body">
+        <span class="tl">
+          <span class="t-tag">[dormant] </span>
+          <span class="t-key">alarm fired</span>
+          <span class="t-dim"> 2026-05-09T07:34:35.130Z</span>
+        </span>
+        <span class="tl">
+          <span class="t-tag">[dormant] </span>
+          <span class="t-val">evaluating</span>
+          <span class="t-dim"> 42 tabs · threshold 30 min</span>
+        </span>
+        <span class="tl">
+          <span class="t-tag">[dormant] </span>
+          <span class="t-warn">skipped</span>
+          <span class="t-dim"> 2 tabs · whitelist match</span>
+        </span>
+        <span class="tl">
+          <span class="t-tag">[dormant] </span>
+          <span class="t-ok">suspended</span>
+          <span class="t-val"> 40 tabs</span>
+          <span class="t-dim"> · ~6,000 MB freed</span>
+        </span>
+        <span class="tl">
+          <span class="t-dim">$ </span><span class="cursor"></span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- URL watermark -->
+<span class="url">bigben-7.github.io/dormant</span>
+
+</body>
+</html>

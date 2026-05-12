@@ -34,8 +34,8 @@ export function AboutContent() {
               className="object-cover"
             />
           </div>
-          <CardTitle className="text-center text-2xl mt-4">Benard</CardTitle>
-          <CardDescription className="text-center">
+          <CardTitle className="text-center text-6xl mt-4">Benard</CardTitle>
+          <CardDescription className="text-center text-primary">
             Software Engineer{" "}
             <span className="font-extrabold text-white">|</span> Mobile &amp; Web{" "}
             <span className="font-extrabold text-white">|</span> OpenSource Contributor
@@ -78,10 +78,10 @@ export function AboutContent() {
 
       <Card>
         <CardHeader>
-          <CardTitle>About Benard</CardTitle>
+          <CardTitle className="text-primary">About Benard<span className="text-primary">.</span></CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <p>
+          <p className="text-sm">
             Software Engineer focused on building fast, accessible, and
             well-crafted web and mobile experiences. I work across the full
             stack — from architecture and component design to performance and

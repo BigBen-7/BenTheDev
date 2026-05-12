@@ -14,8 +14,8 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-body",
 });
 export const metadata: Metadata = {
-  title: "Benard Simon | Frontend Engineer",
-  description: "Frontend Engineer and OpenSource Contributor portfolio",
+  title: "Benard Simon | Software Engineer",
+  description: "Software Engineer and OpenSource Contributor portfolio",
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-touch-icon.png" }],
   },
   openGraph: {
-    title: "Benard Simon | Frontend Engineer",
+    title: "Benard Simon | Software Engineer",
     description:
       "Explore my portfolio, open-source contributions, and frontend projects.",
     url: "https://ben-the-dev.vercel.app/",
@@ -42,8 +42,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Benard Simon | Frontend Engineer",
-    description: "Frontend Engineer and OpenSource Contributor portfolio",
+    title: "Benard Simon | Software Engineer",
+    description: "Software Engineer and OpenSource Contributor portfolio",
     images: ["/Benard.png"],
   },
 };
@@ -55,7 +55,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${spaceGrotesk.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
+      <body
+        className={`${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
+        suppressHydrationWarning
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

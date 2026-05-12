@@ -38,7 +38,7 @@ export default function Home() {
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="text-xl font-bold tracking-tight">
-              benard.dev
+              benard<span className="text-primary">.</span>dev
             </Link>
           </div>
           <nav className="flex items-center gap-6 text-sm">
@@ -60,22 +60,23 @@ export default function Home() {
           </div>
         </div>
       </header>
-      <main className="container py-12 md:py-24">
-        <section className="space-y-6 pb-12 md:pb-24 lg:py-32">
+      <main className="container ">
+        <section className="space-y-6 pb-12 md:pb-24 lg:py-14">
           <div className="flex flex-col items-start gap-8 md:flex-row md:justify-between">
             <div className="space-y-6 md:max-w-[60%]">
               <div className="space-y-2">
                 <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
                   Benard Simon<span className="text-primary">.</span>
                 </h1>
-                <p className="text-xl font-semibold text-primary">
-                  Software Engineer | Mobile & Web | OpenSource Contributor
+                <p className="text-xl font-semibold">
+                  Software Engineer <span className="text-primary">|</span> Mobile & Web <span className="text-primary">|</span> OpenSource Contributor
                 </p>
               </div>
               <p className="max-w-[600px] text-muted-foreground md:text-l">
-                I build web and mobile apps that are a pleasure to use — with
-                beautiful typography, meaningful transitions, and thoughtful
-                interactions that delight people.
+                I build web and mobile apps that are a pleasure to use — crafting
+                beautiful interfaces with meaningful transitions and thoughtful
+                interactions. When I'm not shipping products, I contribute to
+                open source.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button
