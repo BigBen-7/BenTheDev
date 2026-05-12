@@ -304,76 +304,82 @@ export default function Home() {
 
         {/* Open Source */}
         <section className="space-y-6 py-8 md:py-12">
-          <div className="space-y-2 text-center md:text-left">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight bg-gradient-to-r from-purple-500 via-blue-400 to-teal-400 bg-clip-text text-transparent animate-gradient">
-              Open Source
-            </h2>
-            <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto md:mx-0">
-              My contributions to the open-source community — shaping tools,
-              improving systems, and building for impact.
-            </p>
+          <div className="flex items-center justify-between">
+            <div className="space-y-1">
+              <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
+                Open Source
+              </h2>
+              <p className="text-muted-foreground">
+                Selected contributions — Rust backend work in the Stellar ecosystem.
+              </p>
+            </div>
+            <Button variant="ghost" asChild className="ml-auto hidden sm:flex">
+              <Link href="/projects?tab=oss" className="flex items-center">
+                View all <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
           </div>
 
-          <div className="grid gap-6">
-            <Card className="liquid-glass">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-base sm:text-lg md:text-xl">
-                  <span className="relative inline-flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                  </span>
-                  Active Contributor
-                </CardTitle>
-                <CardDescription className="text-sm sm:text-base md:text-lg leading-relaxed">
-                  Projects in the blockchain space — Starknet, Stellar, and
-                  WorldCoin ecosystems — built with JavaScript, TypeScript,
-                  React, and Next.js.
-                </CardDescription>
-              </CardHeader>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                org: "StellarCommons",
+                repo: "stellar-fee-tracker",
+                repoUrl: "https://github.com/StellarCommons/stellar-fee-tracker",
+                what: "Built Horizon client trait methods",
+                detail: "Implemented fetch_latest_transaction and fetch_operations in Rust, enabling live transaction data retrieval from the Stellar network.",
+                stack: ["Rust", "Stellar SDK"],
+              },
+              {
+                org: "StellarCommons",
+                repo: "stellar-fee-tracker",
+                repoUrl: "https://github.com/StellarCommons/stellar-fee-tracker",
+                what: "Scaffolded devkit with simulation modules",
+                detail: "Initialised the devkit crate in the Cargo workspace and built harness & simulation modules for integration testing.",
+                stack: ["Rust", "Cargo Workspaces"],
+              },
+              {
+                org: "StellarCommons",
+                repo: "stellar-explain",
+                repoUrl: "https://github.com/StellarCommons/stellar-explain",
+                what: "Wired Horizon data layer into core startup",
+                detail: "Hooked up memo deserialization and network config at server startup, completing the Rust data layer for live transaction explanations.",
+                stack: ["Rust", "Serde", "Axum"],
+              },
+            ].map((c, i) => (
+              <Card key={i} className="liquid-glass flex flex-col">
+                <CardHeader className="pb-2">
+                  <p className="text-xs text-muted-foreground font-medium tracking-wide uppercase mb-1">
+                    {c.org}
+                  </p>
+                  <CardTitle className="text-base leading-snug">{c.what}</CardTitle>
+                </CardHeader>
+                <CardContent className="flex-1 pb-3">
+                  <p className="text-sm text-muted-foreground leading-relaxed">{c.detail}</p>
+                  <div className="flex flex-wrap gap-1.5 mt-3">
+                    {c.stack.map((s) => (
+                      <Badge key={s} variant="secondary" className="text-xs rounded-md">{s}</Badge>
+                    ))}
+                  </div>
+                </CardContent>
+                <CardFooter className="pt-0">
+                  <Button variant="outline" size="sm" asChild>
+                    <Link href={c.repoUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5">
+                      <ExternalLink className="h-3 w-3" />
+                      {c.repo}
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
 
-              <CardContent className="space-y-4 text-sm sm:text-base md:text-lg leading-relaxed">
-                <p>
-                  I actively contribute to open-source projects, focusing on
-                  frontend architecture, UI performance, and developer
-                  experience. These collaborations have helped enhance ecosystem
-                  tools and drive user-centered innovation.
-                </p>
-
-                <ul className="list-disc list-inside text-muted-foreground space-y-1">
-                  <li>
-                    <strong>Veritix:</strong> Event ticketing platform (NestJS +
-                    PostgreSQL).
-                  </li>
-                  <li>
-                    <strong>Vestroll:</strong> Team Management.
-                  </li>
-                  <li>
-                    <strong>Dewordle:</strong> Multi-game word platform with
-                    leaderboards.
-                  </li>
-                  <li>
-                    <strong>LyricsFlip:</strong> Music lyric remix API backend.
-                  </li>
-                </ul>
-              </CardContent>
-
-              <CardFooter>
-                <Button
-                  asChild
-                  className="transition-all hover:scale-[1.03] hover:shadow-md hover:shadow-primary/30 text-sm sm:text-base"
-                >
-                  <Link
-                    href="https://jealousgx.github.io/oss-tracker/?username=BigBen-7"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center"
-                  >
-                    View My Contributions{" "}
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardFooter>
-            </Card>
+          <div className="flex justify-center sm:hidden">
+            <Button asChild>
+              <Link href="/projects?tab=oss" className="flex items-center">
+                View all contributions <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
           </div>
         </section>
       </main>
