@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, ExternalLink, GitMerge } from "lucide-react";
@@ -73,7 +74,7 @@ const ossContributions = [
   },
 ];
 
-export default function ProjectsPage() {
+function ProjectsContent() {
   const searchParams = useSearchParams();
   const defaultTab = searchParams.get("tab") === "oss" ? "oss" : "projects";
 
@@ -338,5 +339,13 @@ export default function ProjectsPage() {
         </TabsContent>
       </Tabs>
     </div>
+  );
+}
+
+export default function ProjectsPage() {
+  return (
+    <Suspense>
+      <ProjectsContent />
+    </Suspense>
   );
 }

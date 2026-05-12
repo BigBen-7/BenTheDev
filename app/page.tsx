@@ -10,6 +10,7 @@ import {
   Mail,
   FileText,
   ExternalLink,
+  GitMerge,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -349,10 +350,15 @@ export default function Home() {
             ].map((c, i) => (
               <Card key={i} className="liquid-glass flex flex-col">
                 <CardHeader className="pb-2">
-                  <p className="text-xs text-muted-foreground font-medium tracking-wide uppercase mb-1">
-                    {c.org}
-                  </p>
-                  <CardTitle className="text-base leading-snug">{c.what}</CardTitle>
+                  <div className="flex items-start justify-between gap-2">
+                    <div>
+                      <p className="text-xs text-muted-foreground font-medium tracking-wide uppercase mb-1">
+                        {c.org}
+                      </p>
+                      <CardTitle className="text-base leading-snug">{c.what}</CardTitle>
+                    </div>
+                    <GitMerge className="h-4 w-4 text-primary shrink-0 mt-1" />
+                  </div>
                 </CardHeader>
                 <CardContent className="flex-1 pb-3">
                   <p className="text-sm text-muted-foreground leading-relaxed">{c.detail}</p>
