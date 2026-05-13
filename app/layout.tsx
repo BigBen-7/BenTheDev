@@ -17,12 +17,7 @@ export const metadata: Metadata = {
   title: "Benard Simon | Software Engineer",
   description: "Software Engineer and OpenSource Contributor portfolio",
   icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon.svg", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-    ],
-    apple: [{ url: "/apple-touch-icon.png" }],
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
   },
   openGraph: {
     title: "Benard Simon | Software Engineer",
@@ -63,7 +58,6 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="system"
           enableSystem
-          disableTransitionOnChange
         >
           {children}
         </ThemeProvider>

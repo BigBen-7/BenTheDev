@@ -38,8 +38,33 @@ export default function Home() {
       <header className="sticky top-0 z-10 w-full nav-glass">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
-            <Link href="/" className="text-xl font-bold tracking-tight">
-              benard<span className="text-primary">.</span>dev
+            <Link href="/" className="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" width="28" height="28" className="shrink-0">
+                <defs>
+                  <radialGradient id="nav-warm" cx="78%" cy="78%" r="65%">
+                    <stop offset="0%" stopColor="#FF4400" stopOpacity="0.14"/>
+                    <stop offset="100%" stopColor="#FF4400" stopOpacity="0"/>
+                  </radialGradient>
+                  <radialGradient id="nav-glow-outer" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stopColor="#FF4400" stopOpacity="0.28"/>
+                    <stop offset="100%" stopColor="#FF4400" stopOpacity="0"/>
+                  </radialGradient>
+                  <radialGradient id="nav-glow-inner" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stopColor="#FF6633" stopOpacity="0.65"/>
+                    <stop offset="100%" stopColor="#FF4400" stopOpacity="0"/>
+                  </radialGradient>
+                </defs>
+                <rect width="32" height="32" rx="7" fill="#0d0d14"/>
+                <rect width="32" height="32" rx="7" fill="url(#nav-warm)"/>
+                <circle cx="15" cy="19" r="7" fill="white"/>
+                <circle cx="15" cy="19" r="3.4" fill="#0d0d14"/>
+                <rect x="0" y="12" width="9" height="14" fill="#0d0d14"/>
+                <rect x="5" y="5" width="4" height="21" rx="2" fill="white"/>
+                <circle cx="25" cy="25" r="7.5" fill="url(#nav-glow-outer)"/>
+                <circle cx="25" cy="25" r="4.5" fill="url(#nav-glow-inner)"/>
+                <circle cx="25" cy="25" r="2.6" fill="#FF4400"/>
+                <circle cx="24.1" cy="24.1" r="0.85" fill="#FF8855" fillOpacity="0.85"/>
+              </svg>
             </Link>
           </div>
           <nav className="flex items-center gap-6 text-sm">
