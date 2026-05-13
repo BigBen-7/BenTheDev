@@ -1,239 +1,100 @@
 "use client";
 
-import {
-  Github,
-  Linkedin,
-  Mail,
-  FileText,
-  MessageSquare,
-  Clock,
-  MapPin,
-  ExternalLink,
-} from "lucide-react";
-import { ResumeModal } from "@/components/resume-modal";
-
+import { Linkedin, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function ContactContent() {
   return (
     <div className="space-y-8">
-      <div className="space-y-4">
+      <div className="space-y-2">
         <h2 className="text-2xl font-bold">Get In Touch</h2>
-        <p className="text-muted-foreground">
-          I'm always open to discussing new projects, creative ideas, or
-          opportunities to be part of your vision. Feel free to reach out
-          through any of the channels below.
+        <p className="text-muted-foreground text-sm">
+          I'm always open to new projects, collaborations, and opportunities.
+          Reach out through any of the channels below.
         </p>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
-        <Card className="overflow-hidden">
-          <CardHeader className="pb-2">
-            <div className="flex items-center gap-3">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20">
-                <Mail className="h-5 w-5 text-primary" />
-              </div>
-              <div>
-                <CardTitle>Email</CardTitle>
-              </div>
-            </div>
-          </CardHeader>
-          <CardContent>
-            <p className="text-xs text-muted-foreground mt-1">
-              For project inquiries and collaborations
-            </p>
-          </CardContent>
-          <CardFooter className="mt-4">
-            <Button variant="outline" asChild className="w-full">
-              <a href="mailto:benardsimon7@gmail.com">
-                <MessageSquare className="mr-2 h-4 w-4" />
-                Send Email
-              </a>
-            </Button>
-          </CardFooter>
-        </Card>
+      {/* Contact channels */}
+      <div className="flex gap-3">
+        <a
+          href="mailto:benardsimon7@gmail.com"
+          className="flex flex-1 items-center justify-center gap-2 rounded-lg border border-border px-4 py-3 transition-colors hover:bg-accent hover:border-primary/30 group"
+        >
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10">
+            <Mail className="h-4 w-4 text-primary" />
+          </div>
+          <p className="text-sm font-medium">Email</p>
+        </a>
 
-        <Card className="overflow-hidden">
-          <CardHeader className="pb-2">
-            <div className="flex items-center gap-3">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20">
-                <Github className="h-5 w-5 text-primary" />
-              </div>
-              <div>
-                <CardTitle>GitHub</CardTitle>
-              </div>
-            </div>
-          </CardHeader>
-          <CardContent>
-            <p className="text-xs text-muted-foreground mt-1">
-              See my open source contributions and personal projects
-            </p>
-          </CardContent>
-          <CardFooter>
-            <Button variant="outline" asChild className="w-full">
-              <a
-                href="https://github.com/BigBen-7"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <ExternalLink className="mr-2 h-4 w-4" />
-                View Profile
-              </a>
-            </Button>
-          </CardFooter>
-        </Card>
-
-        <Card className="overflow-hidden">
-          <CardHeader className="pb-2">
-            <div className="flex items-center gap-3">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20">
-                <Linkedin className="h-5 w-5 text-primary" />
-              </div>
-              <div>
-                <CardTitle>LinkedIn</CardTitle>
-              </div>
-            </div>
-          </CardHeader>
-          <CardContent>
-            <p className="font-medium"></p>
-            <p className="text-sm text-muted-foreground mt-1">
-              Let's connect and discuss opportunities
-            </p>
-          </CardContent>
-          <CardFooter>
-            <Button variant="outline" asChild className="w-full">
-              <a
-                href="https://www.linkedin.com/in/benard-simon-181413244"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <ExternalLink className="mr-2 h-4 w-4" />
-                Connect
-              </a>
-            </Button>
-          </CardFooter>
-        </Card>
-
-        <Card className="overflow-hidden">
-          <CardHeader className="pb-2">
-            <div className="flex items-center gap-3">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20">
-                <FileText className="h-5 w-5 text-primary" />
-              </div>
-              <div>
-                <CardTitle>Resume</CardTitle>
-              </div>
-            </div>
-          </CardHeader>
-          <CardContent>
-              <p className="text-xs text-muted-foreground mt-1">
-                Get a comprehensive overview of my skills and experience
-              </p>
-          </CardContent>
-          <CardFooter>
-            <ResumeModal className="w-full" />
-          </CardFooter>
-        </Card>
+        <a
+          href="https://www.linkedin.com/in/benard-simon-181413244"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex flex-1 items-center justify-center gap-2 rounded-lg border border-border px-4 py-3 transition-colors hover:bg-accent hover:border-primary/30 group"
+        >
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10">
+            <Linkedin className="h-4 w-4 text-primary" />
+          </div>
+          <p className="text-sm font-medium">LinkedIn</p>
+        </a>
       </div>
 
-      <Separator />
-
+      {/* Availability */}
       <Card>
-        <CardHeader>
-          <CardTitle>Availability & Working Hours</CardTitle>
+        <CardHeader className="pb-3">
+          <CardTitle className="text-primary text-base">Availability</CardTitle>
         </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="flex items-start gap-3">
-            <Clock className="h-5 w-5 text-primary mt-0.5" />
-            <div>
-              <h3 className="font-medium">Working Hours</h3>
-              <p className="text-sm text-muted-foreground">
-                Monday - Friday: 9:00 AM - 6:00 PM (WAT)
-              </p>
-              <p className="text-sm text-muted-foreground">
-                I'm flexible and can accommodate different time zones for
-                meetings and collaborations.
-              </p>
-            </div>
+        <CardContent className="space-y-3">
+          <div className="flex items-center gap-3">
+            <span className="relative flex h-2.5 w-2.5 shrink-0">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
+            </span>
+            <p className="text-sm font-medium">Open to work · Remote · WAT (UTC+1)</p>
           </div>
-
-          <div className="flex items-start gap-3">
-            <MapPin className="h-5 w-5 text-primary mt-0.5" />
-            <div>
-              <h3 className="font-medium">Location</h3>
-              <p className="text-sm text-muted-foreground">
-                Based in Kaduna, Nigeria
-              </p>
-              <p className="text-sm text-muted-foreground">
-                Available for remote work worldwide and open to relocation for
-                the right opportunity.
-              </p>
-            </div>
+          <div className="flex items-start gap-3 text-sm text-muted-foreground">
+            <MapPin className="h-4 w-4 shrink-0 mt-0.5 text-primary" />
+            <span>Based in Kaduna, Nigeria · Available worldwide · Open to relocation</span>
           </div>
         </CardContent>
       </Card>
 
+      {/* How I Can Help */}
       <Card>
-        <CardHeader>
-          <CardTitle>How I Can Help</CardTitle>
+        <CardHeader className="pb-3">
+          <CardTitle className="text-primary text-base">How I Can Help</CardTitle>
         </CardHeader>
         <CardContent>
           <ul className="space-y-3">
-            <li className="flex items-start gap-2">
-              <div className="rounded-full bg-primary/20 p-1 mt-0.5">
-                <span className="text-xs text-primary font-bold">✓</span>
-              </div>
-              <div>
-                <p className="font-medium">Frontend Development</p>
-                <p className="text-sm text-muted-foreground">
-                  Building responsive, accessible, and performant web
-                  applications
-                </p>
-              </div>
-            </li>
-            <li className="flex items-start gap-2">
-              <div className="rounded-full bg-primary/20 p-1 mt-0.5">
-                <span className="text-xs text-primary font-bold">✓</span>
-              </div>
-              <div>
-                <p className="font-medium">React & Next.js Development</p>
-                <p className="text-sm text-muted-foreground">
-                  Creating modern web applications with React and Next.js
-                </p>
-              </div>
-            </li>
-            <li className="flex items-start gap-2">
-              <div className="rounded-full bg-primary/20 p-1 mt-0.5">
-                <span className="text-xs text-primary font-bold">✓</span>
-              </div>
-              <div>
-                <p className="font-medium">Open Source Contributions</p>
-                <p className="text-sm text-muted-foreground">
-                  Collaborating on open source projects and contributing to the
-                  community
-                </p>
-              </div>
-            </li>
-            <li className="flex items-start gap-2">
-              <div className="rounded-full bg-primary/20 p-1 mt-0.5">
-                <span className="text-xs text-primary font-bold">✓</span>
-              </div>
-              <div>
-                <p className="font-medium">UI/UX Implementation</p>
-                <p className="text-sm text-muted-foreground">
-                  Turning designs into functional, beautiful interfaces
-                </p>
-              </div>
-            </li>
+            {[
+              {
+                title: "Web Development",
+                desc: "Responsive, accessible, and performant web apps with React & Next.js",
+              },
+              {
+                title: "Mobile Development",
+                desc: "Cross-platform mobile apps with React Native and TypeScript",
+              },
+              {
+                title: "UI/UX Implementation",
+                desc: "Turning designs into polished, delightful interfaces",
+              },
+              {
+                title: "Open Source",
+                desc: "Contributing to projects across blockchain, infrastructure, and dev tooling",
+              },
+            ].map(({ title, desc }) => (
+              <li key={title} className="flex items-start gap-3">
+                <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/15">
+                  <span className="text-[10px] text-green-500 font-bold">✓</span>
+                </div>
+                <div>
+                  <p className="text-sm font-medium">{title}</p>
+                  <p className="text-xs text-muted-foreground">{desc}</p>
+                </div>
+              </li>
+            ))}
           </ul>
         </CardContent>
       </Card>
