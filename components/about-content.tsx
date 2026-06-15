@@ -211,7 +211,16 @@ export function AboutContent() {
                     <circle cx="22.5" cy="21" r="1.8" fill="#a3f0c0" fillOpacity="0.8"/>
                     <circle cx="27" cy="30.5" r="2.2" fill="#a3f0c0" fillOpacity="0.9"/>
                   </svg>
-                  <span><span className="font-medium text-green-600 dark:text-green-400">Enechambs</span> — Full-stack foodstuff inventory (Next.js + NestJS + PostgreSQL); bulk sales, expense tracking, stock alerts, automated email receipts via Resend.</span>
+                  <span className="flex flex-col gap-1">
+                    <span><span className="font-medium text-green-600 dark:text-green-400">Enechambs</span> — Full-stack foodstuff inventory (Next.js + NestJS + PostgreSQL).</span>
+                    <Link
+                      href="/projects?tab=freelance"
+                      className="inline-flex items-center gap-1 text-[10px] font-medium text-primary hover:underline"
+                    >
+                      View project details
+                      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+                    </Link>
+                  </span>
                 </li>
               </ul>
             </div>

@@ -1,9 +1,9 @@
 "use client";
 
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, ExternalLink, GitMerge } from "lucide-react";
+import { ArrowLeft, ExternalLink, GitMerge, Package, ShoppingCart, BarChart3, Clock, ChevronRight, Zap, Shield, Globe } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { SlidePanel } from "@/components/slide-panel";
 
 const ossContributions = [
   {
@@ -76,7 +77,9 @@ const ossContributions = [
 
 function ProjectsContent() {
   const searchParams = useSearchParams();
-  const defaultTab = searchParams.get("tab") === "oss" ? "oss" : "projects";
+  const tab = searchParams.get("tab");
+  const defaultTab = tab === "oss" ? "oss" : tab === "freelance" ? "freelance" : "projects";
+  const [enechambsOpen, setEnechambsOpen] = useState(false);
 
   return (
     <div className="container py-12">
@@ -99,6 +102,7 @@ function ProjectsContent() {
       <Tabs defaultValue={defaultTab}>
         <TabsList className="mb-8">
           <TabsTrigger value="projects">Projects</TabsTrigger>
+          <TabsTrigger value="freelance">Freelance</TabsTrigger>
           <TabsTrigger value="oss">Open Source</TabsTrigger>
         </TabsList>
 
@@ -284,6 +288,219 @@ function ProjectsContent() {
             </div>
           </Card>
         </TabsContent>
+
+        {/* ── FREELANCE TAB ────────────────────────────────── */}
+        <TabsContent value="freelance" className="space-y-6">
+          <div className="mb-6">
+            <h2 className="text-xl font-semibold">Freelance Projects</h2>
+            <p className="text-sm text-muted-foreground mt-1">
+              Client work — full-stack systems built end-to-end.
+            </p>
+          </div>
+
+          {/* ── Enechambs Card ── */}
+          <Card className="overflow-hidden liquid-glass group">
+            <div className="md:grid md:grid-cols-[200px_1fr]">
+
+              {/* Logo panel */}
+              <div className="relative flex items-center justify-center p-8 overflow-hidden bg-gradient-to-br from-[#0d2e1a] to-[#061509]">
+                <div className="absolute inset-0 opacity-20"
+                  style={{ backgroundImage: "radial-gradient(circle at 60% 40%, #1a9155 0%, transparent 65%)" }} />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none" width="80" height="80" className="relative z-10 drop-shadow-xl">
+                  <defs>
+                    <linearGradient id="enc-logo-bg" x1="0" y1="0" x2="1" y2="1">
+                      <stop stopColor="#1a9155"/><stop offset="1" stopColor="#0b3d22"/>
+                    </linearGradient>
+                  </defs>
+                  <rect width="40" height="40" rx="9" fill="url(#enc-logo-bg)"/>
+                  <rect x="9" y="7" width="3.5" height="27" rx="1.75" fill="white"/>
+                  <path d="M9 7H22C25 7 27 8.6 27 10.5C27 12.4 25 14 22 14H9V7Z" fill="white"/>
+                  <path d="M9 18H18C20.8 18 22.5 19.3 22.5 21C22.5 22.7 20.8 24 18 24H9V18Z" fill="white"/>
+                  <path d="M9 27H22C25 27 27 28.6 27 30.5C27 32.4 25 34 22 34H9V27Z" fill="white"/>
+                  <circle cx="27" cy="10.5" r="2.2" fill="#a3f0c0" fillOpacity="0.9"/>
+                  <circle cx="22.5" cy="21" r="1.8" fill="#a3f0c0" fillOpacity="0.8"/>
+                  <circle cx="27" cy="30.5" r="2.2" fill="#a3f0c0" fillOpacity="0.9"/>
+                </svg>
+              </div>
+
+              {/* Info */}
+              <div className="p-5 flex flex-col gap-4">
+                <div>
+                  <div className="flex items-start justify-between gap-2 flex-wrap">
+                    <div>
+                      <h3 className="text-xl font-semibold tracking-tight">Enechambs Food</h3>
+                      <p className="text-xs text-muted-foreground mt-0.5">Full-stack inventory &amp; sales system · Kaduna, Nigeria · Sole technical maintainer</p>
+                    </div>
+                    <span className="inline-flex items-center gap-1 rounded-full bg-green-500/10 border border-green-500/20 px-2.5 py-0.5 text-[10px] font-semibold text-green-500 shrink-0">
+                      <span className="relative flex h-1.5 w-1.5">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                        <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-500" />
+                      </span>
+                      Live · June 2026
+                    </span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
+                    End-to-end platform replacing a paper-based system — real-time stock, daily sales recording, automated month-end P&amp;L, and role-based access for a 10-person team.
+                  </p>
+                </div>
+
+                {/* Stats row */}
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                  {[
+                    { value: "184", label: "SKUs migrated" },
+                    { value: "~25", label: "sales / day" },
+                    { value: "10", label: "team members" },
+                    { value: "1→2", label: "locations" },
+                  ].map(({ value, label }) => (
+                    <div key={label} className="rounded-lg border border-green-500/15 bg-green-500/5 px-3 py-2 text-center">
+                      <p className="text-base font-bold text-green-400 leading-none">{value}</p>
+                      <p className="text-[10px] text-muted-foreground mt-1 leading-tight">{label}</p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Stack + action */}
+                <div className="flex flex-wrap items-center justify-between gap-3 mt-auto">
+                  <div className="flex flex-wrap gap-1.5">
+                    {["NestJS", "Next.js", "PostgreSQL", "TypeScript", "Resend", "Zustand"].map(t => (
+                      <Badge key={t} variant="secondary" className="text-[10px] rounded-md">{t}</Badge>
+                    ))}
+                  </div>
+                  <Button
+                    size="sm"
+                    onClick={() => setEnechambsOpen(true)}
+                    className="bg-green-700 hover:bg-green-600 text-white gap-1.5 shrink-0"
+                  >
+                    View Case Study
+                    <ChevronRight className="h-3.5 w-3.5" />
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </TabsContent>
+
+        {/* ── Enechambs Slide Panel ── */}
+        <SlidePanel
+          isOpen={enechambsOpen}
+          onClose={() => setEnechambsOpen(false)}
+          title="Enechambs Food — Case Study"
+        >
+          <div className="space-y-7 text-sm">
+
+            {/* Header */}
+            <div className="flex items-center gap-4 pb-5 border-b border-border">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none" width="52" height="52" className="shrink-0 rounded-xl shadow-md">
+                <defs>
+                  <linearGradient id="enc-panel-bg" x1="0" y1="0" x2="1" y2="1">
+                    <stop stopColor="#1a9155"/><stop offset="1" stopColor="#0b3d22"/>
+                  </linearGradient>
+                </defs>
+                <rect width="40" height="40" rx="9" fill="url(#enc-panel-bg)"/>
+                <rect x="9" y="7" width="3.5" height="27" rx="1.75" fill="white"/>
+                <path d="M9 7H22C25 7 27 8.6 27 10.5C27 12.4 25 14 22 14H9V7Z" fill="white"/>
+                <path d="M9 18H18C20.8 18 22.5 19.3 22.5 21C22.5 22.7 20.8 24 18 24H9V18Z" fill="white"/>
+                <path d="M9 27H22C25 27 27 28.6 27 30.5C27 32.4 25 34 22 34H9V27Z" fill="white"/>
+                <circle cx="27" cy="10.5" r="2.2" fill="#a3f0c0" fillOpacity="0.9"/>
+                <circle cx="22.5" cy="21" r="1.8" fill="#a3f0c0" fillOpacity="0.8"/>
+                <circle cx="27" cy="30.5" r="2.2" fill="#a3f0c0" fillOpacity="0.9"/>
+              </svg>
+              <div>
+                <h3 className="font-semibold text-base leading-tight">Enechambs Food</h3>
+                <p className="text-xs text-muted-foreground mt-0.5 leading-snug">Full-stack business management system built end-to-end for a Nigerian foodstuff distribution company</p>
+              </div>
+            </div>
+
+            {/* Overview */}
+            <div>
+              <p className="text-muted-foreground leading-relaxed">
+                Enechambs Food needed to move from paper-based inventory tracking to a live digital system that could handle daily sales, real-time stock levels, and monthly financial reporting — without requiring technical knowledge from the business owner or staff. I built and deployed the full system end-to-end and continue to serve as the sole technical maintainer.
+              </p>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-2 gap-2">
+              {[
+                { value: "184 SKUs", label: "Migrated from paper" },
+                { value: "~25/day", label: "Sales recorded" },
+                { value: "10 staff", label: "1 location (2nd in setup)" },
+                { value: "June 2026", label: "Live in production" },
+              ].map(({ value, label }) => (
+                <div key={label} className="rounded-lg border border-green-500/15 bg-green-500/5 px-3 py-2.5">
+                  <p className="font-bold text-green-400 text-sm">{value}</p>
+                  <p className="text-[10px] text-muted-foreground mt-0.5">{label}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* What it does */}
+            <div>
+              <h4 className="font-semibold text-xs uppercase tracking-widest text-muted-foreground mb-3">What the system does</h4>
+              <div className="space-y-3">
+                {[
+                  {
+                    icon: <Package className="h-4 w-4 text-green-400" />,
+                    title: "Inventory Management",
+                    desc: "Live stock quantities per product with variant and unit support (bags, packs, cartons). Stock decrements automatically on every sale. Low-stock alerts fire at configurable thresholds. Products carry both cost and selling price — the gap drives all profit calculations.",
+                  },
+                  {
+                    icon: <ShoppingCart className="h-4 w-4 text-green-400" />,
+                    title: "Sales Recording",
+                    desc: "Multi-item carts with quantity selection and optional discounts. A role-based discount cap restricts staff to 5% max; higher discounts require admin approval. Every sale atomically decrements inventory at the DB level — concurrent sales cannot oversell.",
+                  },
+                  {
+                    icon: <BarChart3 className="h-4 w-4 text-green-400" />,
+                    title: "Financial Reporting",
+                    desc: "Admin-only suite: daily/weekly/monthly revenue & profit, category breakdown, top products, staff performance, and full Monthly P&L — Opening Stock + Purchases − Closing Stock = COGS; Sales − Discounts − COGS = Gross Profit; Gross Profit − Expenses = Net Profit.",
+                  },
+                  {
+                    icon: <Clock className="h-4 w-4 text-green-400" />,
+                    title: "Automated Month-End",
+                    desc: "A scheduled cron fires at 9PM WAT on the last day of every month. It carries closing stock forward as next month's opening stock and emails all active admins a branded PDF report via Resend. Zero manual month-end work.",
+                  },
+                ].map(({ icon, title, desc }) => (
+                  <div key={title} className="flex gap-3 rounded-lg border border-border bg-muted/30 p-3">
+                    <div className="mt-0.5 shrink-0">{icon}</div>
+                    <div>
+                      <p className="font-medium text-xs mb-1">{title}</p>
+                      <p className="text-[11px] text-muted-foreground leading-relaxed">{desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Technical highlights */}
+            <div>
+              <h4 className="font-semibold text-xs uppercase tracking-widest text-muted-foreground mb-3">Technical Highlights</h4>
+              <ul className="space-y-2">
+                {[
+                  { icon: <Shield className="h-3.5 w-3.5 text-green-400 shrink-0 mt-0.5" />, text: "Atomic stock deduction via PostgreSQL UPDATE WHERE quantity >= :qty — eliminates race conditions, no overselling possible." },
+                  { icon: <Zap className="h-3.5 w-3.5 text-green-400 shrink-0 mt-0.5" />, text: "Profit calculated as (finalPrice − costPrice) × quantity — caught a silent bug that was understating cost and overstating profit on multi-quantity sales." },
+                  { icon: <Zap className="h-3.5 w-3.5 text-green-400 shrink-0 mt-0.5" />, text: "Closing stock valued at cost price × quantity in both on-demand P&L and month-end PDF — fixed a second bug that was using selling price, silently inflating COGS." },
+                  { icon: <Zap className="h-3.5 w-3.5 text-green-400 shrink-0 mt-0.5" />, text: "TypeORM entities aligned to numeric(10,3) DB columns with pg driver coercion via transformers — permanently eliminated migration drift generating dangerous ALTER TABLE statements." },
+                  { icon: <Globe className="h-3.5 w-3.5 text-green-400 shrink-0 mt-0.5" />, text: "WAT-timezone-aware date filtering (sale.date::date = :today) — UTC-only logic produces wrong daily totals for a Nigerian business." },
+                  { icon: <Shield className="h-3.5 w-3.5 text-green-400 shrink-0 mt-0.5" />, text: "JWT auth, global rate limiting via ThrottlerGuard, exception logging, hardened env var handling, and Resend on custom domain (noreply@enechambs.com) with DKIM, SPF, MX, DMARC." },
+                ].map(({ icon, text }, i) => (
+                  <li key={i} className="flex gap-2 text-[11px] text-muted-foreground leading-relaxed">
+                    {icon}
+                    <span>{text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Role & stack */}
+            <div>
+              <h4 className="font-semibold text-xs uppercase tracking-widest text-muted-foreground mb-3">Stack &amp; Infrastructure</h4>
+              <div className="flex flex-wrap gap-1.5">
+                {["NestJS", "TypeORM", "PostgreSQL (Neon)", "Next.js 14", "Tailwind CSS", "shadcn/ui", "Zustand", "TypeScript", "Resend", "Render", "Vercel", "Neon", "Hostinger"].map(t => (
+                  <Badge key={t} variant="secondary" className="text-[10px] rounded-md">{t}</Badge>
+                ))}
+              </div>
+            </div>
+          </div>
+        </SlidePanel>
 
         {/* ── OPEN SOURCE TAB ──────────────────────────────── */}
         <TabsContent value="oss">
